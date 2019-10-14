@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enki Realty</title>
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Lato:300,400,700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" type="text/css" rel="stylesheet" />
+    <link href="/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="/css/dropdown.css" rel="stylesheet" type="text/css" />
+    <link href="/css/dimmer.css" rel="stylesheet" type="text/css" />
+    <link href="/css/hamburger.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <nav>
+      <div class="signIn_register">
+        <ul>
+          <li>
+            <a href="/login">Login</a>
+          </li>
+          <li>Agent Sign up</li>
+          <% if(currentUser && currentUser.confirmation === true){ %>
+          <li>
+            <div class="ui compact menu">
+              <div class="ui simple dropdown item">
+                  User Controls
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                  <div class="item logout"><a href="/user/<%= currentUser.id %>">Your account</a></div>
+                  <div class="item logout"><a href="/listings/new">New Listing</a></div>
+                  <div class="item logout">Log Out</div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <% } %>
+        </ul>
+      </div>
+      <div class="logoContainer">
+      <h1><span>Enki</span>&nbsp;<img src="./img/house.svg" height='35px' width=35px' style="position: relative; top: 5px;"/>&nbsp;Realty</h1>
+      </div>
+      <div class="navBar">
+        <ul id="navBarUl">
+          <li><a href="/">Home</a></li>
+          <li><a href="/listings">Listings</a></li>
+          <li><a href= "/">Why Enki?</a></li>
+          <li id="contactLink">Contact</li>
+        </ul>
+    </nav>
+    <% if(error && error.length > 0){ %>
+      <div class="ui negative message">
+        <div class="header">
+          <p>
+            <%= error %>
+
+          </p>
+        </div>
+      </div>
+    <% } %>
+    <% if(success && success.length > 0) { %>
+    <div class="ui positive message centered">
+      <div class="header">
+        <p>
+          <%= success %>
+        </p>
+      </div>
+    </div>
+    <% } %>

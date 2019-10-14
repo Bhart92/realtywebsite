@@ -1,0 +1,36 @@
+<% include ./partials/header %>
+
+<div id="loginSignUpContainer">
+  <div id="OuterFormContainer">
+    <div id="loginForm">
+      <div id="formContainer">
+        <form class="loginSignupForm" action="/login" method="POST">
+          <input type="text" name="username" placeholder="Username" required>
+          <input type="password" name="password" placeholder="Password" required>
+          <input type="submit" value="Login">
+        </form>
+      </div>
+      <!-- <hr id="loginLine"> -->
+      <div id="orDiv">
+        <p>OR</p>
+      </div>
+      <div id="registerContainer">
+        <a href="#" id="signUpLink">Sign Up!</a>
+        <div id="signUpFormContainer">
+          <i class="fas fa-times"></i>
+          <form id="signUpForm" action="/register" method="POST">
+            <input type="text" name="username" placeholder="Username">
+            <input type="text" name="name" placeholder="Your Name">
+            <input type="password" name="password" placeholder="Your password">
+            <input type="email" name="email" placeholder="Your Email">
+            <input type="text" name="confirmation" placeholder="Enter confirmation code">
+            <textarea name="description" maxlength="150"  placeholder="Enter a brief Description. you can edit it later."></textarea>
+            <input type="submit" value="Register">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include ./partials/footer %>

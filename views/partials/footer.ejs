@@ -1,0 +1,76 @@
+
+<footer>
+  <div id="footerNav">
+    <ul id="footerNavUlColOne">
+      <li><a href="#">Why Enki?</a></li>
+      <li><a href="#">Listings</a></li>
+    </ul>
+    <ul id="footerNavUlColTwo">
+      <li><a href="#">Sold</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+  <div id="footerLogo">
+    <h1><span>Enki</span>&nbsp;<img src="./img/house.svg" height='35px' width=35px' style="position: relative; top: 5px;"/>&nbsp;Realty</h1>
+  </div>
+  <div id="footerSignIn_register">
+    <ul id="footerSignIn">
+      <li><a href="#">Login</a></li>
+      <li><a href="#">Agent Sign up</a></li>
+    </ul>
+  </div>
+  <div id="flatIconCred">Icons made by <a href="https://www.flaticon.com/authors/zlatko-najdenovski" title="Zlatko Najdenovski">Zlatko Najdenovski</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div>
+</footer>
+<script type='text/javascript' src='./js/jquery.js'></script>
+<script type='text/javascript' src='./js/cycle2.js'></script>
+<script type='text/javascript' src='./js/semantic.min.js'></script>
+<script type='text/javascript' src='./js/index.js'></script>
+<script type="text/javascript">
+
+  $('#registerContainer a').on('click', function(){
+    showRegisterForm();
+  });
+  $('.fa-times').on('click', function(){
+    hideRegisterForm();
+  });
+
+  function hideRegisterForm(){
+    var hideForm = {
+      clipPath: 'circle(10% at 100% 0%)',
+      zIndex: 'unset',
+      background: 'rgba(0, 191, 255, .5)'
+    };
+    var showLink = {
+      opacity: '1',
+      zIndex: '1'
+    };
+    var showCloseIcon = {
+      transform: 'scale(0)'
+    };
+    $('#registerContainer a').css(showLink);
+    $('#signUpFormContainer').css(hideForm);
+    $('.fa-times').css(showCloseIcon);
+    $('#orDiv').css({opacity: '1'});
+  }
+
+  function showRegisterForm(){
+    var formShow = {
+      clipPath: 'circle(200% at 100% 0%)',
+      zIndex: '1000',
+      background: '#fff'
+    };
+    var showCloseIcon = {
+      transform: 'scale(1)'
+    };
+    var hideLink = {
+      opacity: '0',
+      zIndex: '-1'
+    };
+    $('#registerContainer a').css(hideLink);
+    $('#signUpFormContainer').css(formShow);
+    $('.fa-times').css(showCloseIcon);
+    $('#orDiv').css({opacity: '0'});
+  }
+</script>
+</body>
+</html>

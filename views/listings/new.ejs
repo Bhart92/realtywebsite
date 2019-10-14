@@ -1,0 +1,38 @@
+<% include ../partials/header %>
+<div id="newListingMainContainer">
+  <h1>Add a new Listing</h1>
+  <form id="newListingForm" action="/listings" method="post" enctype="multipart/form-data">
+    <div id="leftSideListingInfo">
+      <div id="listingAddress">
+        <h2>Listing Address</h2>
+        <div class="">
+          <input type="text" name="listing[address]" placeholder="Address" required>
+          <input type="text" name="listing[city]" placeholder="City" required>
+        </div>
+        <div class="">
+        <input type="text" name="listing[state]" placeholder="State" required>
+        <input type="text" name="listing[zipCode]" placeholder="Zip code" required>
+        </div>
+      </div>
+      <div id="listingInfo">
+        <h2>Listing Info</h2>
+        <div id="listingInfoContainer">
+          <input type="text" name="listing[sqft]" placeholder="Square Footage" required>
+          <input type="text" name="listing[lotSize]" placeholder="Lot Size" required>
+          <input type="text" name="listing[yearBuilt]" placeholder="Year Built" required>
+          <input type="text" name="listing[bedrooms]" placeholder="Bedroom Count" required>
+          <input type="text" name="listing[bathrooms]" placeholder="Bathroom Count" required>
+          <input type="text" name="listing[amenities]" placeholder="Amenities" required>
+        </div>
+      </div>
+    </div>
+    <div id="rightSideListingInfo">
+      <div id="listingphotos">
+        <textarea name="listing[description]" placeholder="Description" required></textarea>
+        <input type="file" name="image" accept="image/*" placeholder="Upload Photos">
+      </div>
+      <input type="submit" value="Upload">
+    </div>
+  </form>
+</div>
+<% include ../partials/footer %>
