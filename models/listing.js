@@ -10,6 +10,7 @@ var listingSchema = new mongoose.Schema({
   bedrooms: String,
   bathrooms: String,
   amenities: String,
+  price: Number,
   description: String,
   image: String,
   imageId: String,

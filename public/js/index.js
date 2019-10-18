@@ -1,4 +1,4 @@
-$('#contactLink').on('click', function(){
+$('.contactLink').on('click', function(){
   $('.modal.contactModal')
     .modal('show')
     ;
@@ -13,4 +13,8 @@ $('#contactLink').on('click', function(){
               'opacity': '1'
          });
      });
+     //Error/success message fade
+     // $('.ui.positive.message').delay(2000).fadeOut();
+     // $('.ui.negative.message').delay(2000).fadeOut();
+     //
   })

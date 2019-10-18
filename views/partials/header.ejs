@@ -13,6 +13,17 @@
     <link href="/css/main.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
+    <div class="ui modal contactModal">
+        <div id="contactFormContainer">
+          <form action="/contact" method="POST" id="contactForm">
+            <h4>Need to send us a message?</h4>
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+            <textarea name="message" placeholder="Your Message" maxlength="250" minlength="4" required></textarea>
+            <input type="submit" value="Send" />
+          </form>
+        </div>
+      </div>
     <nav>
       <div class="signIn_register">
         <ul>
@@ -38,14 +49,14 @@
         </ul>
       </div>
       <div class="logoContainer">
-      <h1><span>Enki</span>&nbsp;<img src="./img/house.svg" height='35px' width=35px' style="position: relative; top: 5px;"/>&nbsp;Realty</h1>
+      <h1><span>Enki</span>&nbsp;<img src="../img/house.svg" height='35px' width=35px' style="position: relative; top: 5px;"/>&nbsp;Realty</h1>
       </div>
       <div class="navBar">
         <ul id="navBarUl">
           <li><a href="/">Home</a></li>
           <li><a href="/listings">Listings</a></li>
           <li><a href= "/">Why Enki?</a></li>
-          <li id="contactLink">Contact</li>
+          <li class="contactLink">Contact</li>
         </ul>
     </nav>
     <% if(error && error.length > 0){ %>

@@ -11,6 +11,7 @@ let User = require('./models/user');
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/user');
 const listingsRoutes = require('./routes/listings');
+const contactRoutes = require('./routes/contact');
 
 
 mongoose.connect('mongodb://localhost:27017/realty', {useNewUrlParser: true});
@@ -52,6 +53,7 @@ app.use(function(req, res, next){
 app.use("/", authRoutes);
 app.use("/user", userRoutes);
 app.use("/listings", listingsRoutes);
+app.use("/contact", contactRoutes);
 
 
 app.get('/', function(req, res){
