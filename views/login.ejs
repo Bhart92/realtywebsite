@@ -19,10 +19,16 @@
         <div id="signUpFormContainer">
           <i class="fas fa-times"></i>
           <form id="signUpForm" action="/register" method="POST">
-            <input type="text" name="username" placeholder="Username">
-            <input type="text" name="name" placeholder="Your Name">
-            <input type="password" name="password" placeholder="Your password">
-            <input type="email" name="email" placeholder="Your Email">
+            <div id="mainFormColumnContainer">
+              <div id="signUpRightContainer">
+                <input type="text" name="username" placeholder="Username">
+                <input type="text" name="name" placeholder="Your Name">
+              </div>
+              <div id="signUpLeftContainer">
+                <input type="password" name="password" placeholder="Your password">
+                <input type="email" name="email" placeholder="Your Email">
+              </div>
+            </div>
             <input type="text" name="confirmation" placeholder="Enter confirmation code">
             <textarea name="description" maxlength="150"  placeholder="Enter a brief Description. you can edit it later."></textarea>
             <input type="submit" value="Register">

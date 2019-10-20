@@ -42,6 +42,7 @@ h2{
   font-family: 'Lato', sans-serif;
   color: #000;
 }
+/* Navs */
 nav{
   display: flex;
   flex-direction: row;
@@ -90,6 +91,39 @@ nav{
   flex-basis: 30%;
   height: 100%;
 }
+#mobileNav{
+  width: 100%;
+  height: 100vh;
+  background-color: #F9FAF6;
+  position: absolute;
+  top:0;
+  bottom:0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  opacity: 0;
+  transform: scale(0);
+  transition: transform .5s ease-in-out,
+            opacity .65s ease-in-out;
+}
+#mobileNav ul{
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: 3rem;
+  list-style: none;
+  padding: unset!important;
+}
+#mobileNav ul li a{
+  font-size: 1.5rem;
+  font-family: 'Forum', cursive;
+}
+/* // */
+/* forms */
 .signIn_register{
   flex-basis: 25%;
   height: 100%;
@@ -180,10 +214,13 @@ nav{
     font-family: arial; font-size: 50px; width: 16px; height: 16px;
     display: inline-block; color: #ddd; cursor: pointer;
 }
-.cycle-pager span.cycle-pager-active { color: #D69746;}
-.cycle-pager > * { cursor: pointer;}
+.cycle-pager span.cycle-pager-active {
+  color: #D69746;}
+.cycle-pager > * {
+  cursor: pointer;}
 /* caption */
-.cycle-caption { position: absolute; color: white; bottom: 15px; right: 15px; z-index: 700; }
+.cycle-caption {
+  position: absolute; color: white; bottom: 15px; right: 15px; z-index: 700; }
 /* overlay */
 .cycle-overlay {
   font-family: tahoma, arial;
@@ -259,9 +296,9 @@ hr{
     overflow: hidden;
 }
 .smallLine {
-    position: absolute;
-    height: 10px;
-    width: 100%;
+  position: absolute;
+  height: 10px;
+  width: 100%;
 }
 .smallLine1 {
     background: linear-gradient(45deg, transparent, transparent 49%, #565656 49%, transparent 51%);
@@ -270,8 +307,9 @@ hr{
     background: linear-gradient(-45deg, transparent, transparent 49%, rgba(0, 191, 255, 1) 49%, transparent 51%);
 }
 .smallLine {
-    background-size: 20px 20px;
-}.line {
+  background-size: 20px 20px;
+}
+.line {
     position: absolute;
     width: 200px;
     /* Height set to clip correctly basically background-size/2 + line width */
@@ -303,7 +341,6 @@ hr{
 .serviceBox{
   width: 35%;
   height: 65%;
-  background-color: #ffffff;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%2387ceeb' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%2300bfff' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%2386ceee' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%233fa9db' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%2386cef1' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%235093b8' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%2386cef4' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23587e96' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%2386cef7' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%23596a75' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%2387cefa' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23565656' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
   background-attachment: fixed;
   background-size: cover;
@@ -320,6 +357,10 @@ hr{
   margin-top: 1rem;
   line-height: 25px;
   text-align: justify;
+}
+.serviceBox p:first-letter{
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 footer{
   opacity: .9;
@@ -445,14 +486,14 @@ button{
   padding: 3px 10px;
 }
 .listingCard{
-width: 50%;
-height: 325px;
-padding: 25px;
-opacity: 0;
-display: flex;
-align-items: center;
-justify-content: center;
-transition: all .25s ease-in;
+  width: 50%;
+  height: 325px;
+  padding: 25px;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .25s ease-in;
 }
 .cardImage{
   height: 100%;
@@ -501,8 +542,8 @@ transition: all .25s ease-in;
   z-index: 1;
 }
 .ListingBrief a{
-padding: 15px;
-padding-right: unset;
+  padding: 15px;
+  padding-right: unset;
 }
 .readMoreContainer{
   width: 100%;
@@ -607,7 +648,7 @@ padding-right: unset;
   transition: all .5s ease-in-out;
 }
 #signUpForm{
-  height: 80%;
+  height: 70%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -617,39 +658,50 @@ padding-right: unset;
 .fa-times{
   transform: scale(0);
   font-size: 2rem;
-  padding: 5px;
-  margin: -5px;
+  padding: 10px;
+  margin: -10px;
   position: absolute;
   top: 10px;
   right: 10px;
+  transition: .35s ease-in-out;
 }
 .fa-times:hover{
   cursor: pointer;
+  color: rgba(0, 191, 255, 1);
+}
+#signUpForm input[type='text']{
+  text-align: center;
 }
 #signUpForm input[type='text'],
 #signUpForm input[type='password'],
 #signUpForm input[type='email'],
 #signUpForm textarea{
   font-size: .9rem;
-  width: 75%;
+  width: 85%;
   border: none;
   border-bottom: 1px solid #000;
   outline: none;
   background-color: transparent;
   color: #000;
-  margin-top: .75rem;
+  margin-top: 1rem;
+}
+#signUpForm input[type='text']:focus,
+#signUpForm input[type='password']:focus,
+#signUpForm input[type='email']:focus,
+#signUpForm textarea:focus{
+  border-bottom: 1px solid rgba(0, 191, 255, 1);
 }
 #signUpForm textarea{
   height: 150px;
-  width: 75%;
+  width: 85%;
 }
 #signUpForm input[type='submit']{
   font-size: .9rem;
   margin-top: 1rem;
 }
 #signUpForm input[type='submit']:hover{
-  border: 1px solid #000;
-  color: #000;
+  border: 1px solid rgba(0, 191, 255, 1);
+  color: rgba(0, 191, 255, 1);
   cursor: pointer;
   border-radius: 5px;
 }
@@ -668,14 +720,6 @@ input[type='submit']:hover, #registerContainer a:hover{
   cursor: pointer;
   border-radius: 5px;
 }
-/* #loginLine{
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(90deg);;
-  background-color: #565656;
-} */
 #orDiv{
   height: 50px;
   width: 50px;
@@ -690,10 +734,6 @@ input[type='submit']:hover, #registerContainer a:hover{
   left: 50%;
   transform: translate(-50%, -50%);
   border: 1px solid rgba(0, 191, 255, .5);
-  box-shadow: 1px 1px .35px #565656 inset,
-              -1px -1px .35px #565656 inset,
-              -1px 1px .35px #565656 inset,
-              1px -1px .35px #565656 inset;
   transition: opacity .25s ease-in-out;
 }
 p{
@@ -721,6 +761,27 @@ p{
   left: 50%;
   transform: translate(-50%, -50%);
 }
+#mainFormColumnContainer{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+}
+#signUpRightContainer, #signUpLeftContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#signUpRightContainer input, #signUpLeftContainer input{
+  text-align: center;
+}
+#signUpRightContainer{
+  align-items: flex-end;
+}
+#signUpLeftContainer{
+  align-items: flex-start;
+}
 textarea{
   resize:none;
   height: 300px;
@@ -743,7 +804,6 @@ textarea{
   align-items: center;
   position: relative;
 }
-
 .positive, .negative{
   position: fixed;
   top: 50%;
@@ -823,9 +883,8 @@ input[type="file"]{
   align-items: center;
   justify-content: center;
 }
-
 #newListingMainContainer h1{
-padding-top: unset;
+  padding-top: unset;
 }
 #newListingForm{
   margin: 0 auto;
@@ -836,6 +895,7 @@ padding-top: unset;
   flex-direction: row;
   align-items: center;
   background: rgba(255, 255, 255, 0.75);
+  border-radius: 25px;
 }
 #leftSideListingInfo, #rightSideListingInfo{
   width: 45%;
@@ -849,10 +909,10 @@ padding-top: unset;
 }
 #listingphotos textarea{
   resize: none;
-height: 175px;
-width: 100%;
-outline: none;
-border: none;
+  height: 175px;
+  width: 100%;
+  outline: none;
+  border: none;
 }
 #listingphotos textarea:focus, #listingphotos input[type='file']:focus{
   outline: #00BFFF;
@@ -877,9 +937,9 @@ border: none;
   word-wrap: break-word;
 }
 #listing_info_Container #userListingContainer{
-height: 60%;
-width: 100%;
-overflow-y: scroll;
+  height: 60%;
+  width: 100%;
+  overflow-y: scroll;
 }
 #listing_info_Container #userAbout{
   height: 40%;
@@ -903,7 +963,6 @@ h3{
   font-family: 'Lato', sans-serif;
   font-size: .95rem;
 }
-
 #listingphotos{
   width: 100%;
   display: flex;
@@ -913,11 +972,9 @@ h3{
   margin: 0 auto;
   height: auto;
 }
-
 #listingphotos input{
   height: 100%;
 }
-
 #listingAddress, #listingInfoContainer{
   display: flex;
     flex-direction: column;
@@ -1002,7 +1059,6 @@ h3{
   transition: all .2s ease-in-out;
   padding: 10px 0;
 }
-
 #contactForm input:focus, #contactForm textarea:focus{
   outline:none;
   opacity: 1;
@@ -1020,11 +1076,11 @@ h3{
   background-position: top;
   border-radius: 15px;
 }
-
 #listingShowContainer{
   height: auto;
   width: 90%;
   margin: 0 auto;
+  margin-top: 2rem;
   display: block;
 }
 #MainShowImgContainer{
@@ -1152,4 +1208,528 @@ h3{
   height: 25px;
   width: 25px;
 }
+#mobileH4{
+  display: none;
+}
+.active{
+  display: flex!important;
+  opacity: 1!important;
+  transform: scale(1)!important;
+  z-index: 1000!important;
+}
+.bodyOverflow{
+  overflow: hidden!important;
+}
+
 /* //// */
+@media only screen and (min-width: 1400px){
+  a, li {
+    font-size: 1rem;
+  }
+  h1 {
+    font-size: 2.05rem;
+  }
+  .logoContainer h1, #footerLogo h1 {
+    font-size: 2.5rem;
+  }
+  .cycle-overlay {
+    font-size: 1.25rem;
+  }
+  #aboutDescription p {
+    font-size: 1.2rem;
+  }
+  #aboutImgContainer img {
+    width: 100%;
+    margin-left: 1rem;
+  }
+  #aboutDescription p {
+    font-size: 1.3rem;
+  }
+  .serviceBox p {
+    line-height: 30px;
+    font-size: 1.25rem;
+  }
+  .serviceBox svg {
+    height: 5.5rem;
+    width: 6rem;
+  }
+  #userImage img {
+    height: 55%;
+    width: 65%;
+  }
+  #userAbout p {
+    line-height: 35px;
+    font-size: 1.25rem;
+  }
+  #listing_info_Container #userAbout h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  #userControlsContainer h1 {
+    font-size: 2rem;
+    margin-bottom: -2rem;
+  }
+}
+@media only screen and (width: 1024px) and (height: 1366px){
+  .cycle-overlay{
+    width: 95%;
+    margin: 0 auto;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .cycle-slideshow div {
+    font-size: 1.25rem;
+  }
+  h1 {
+    font-size: 2.5rem;
+    }
+  a, li {
+    font-size: 1.25rem;
+  }
+  .logoContainer h1, #footerLogo h1 {
+    font-size: 3rem;
+    }
+  #aboutImgContainer {
+      margin-left: unset;
+      margin-right: unset;
+      height: 60%;
+      width: 50%;
+    }
+  #aboutDescription p {
+    font-size: 1.35rem;
+  }
+  .serviceBox{
+    height: auto;
+    flex-direction: row;
+    background: rgba(255, 255, 255, .75);
+    border-radius: 25px;
+  }
+  .serviceBox p{
+    text-align: center;
+    line-height: 30px;
+    font-size: 1.2rem;
+  }
+  .serviceBox:first-of-type{
+    align-self: flex-start;
+    margin-top: 4rem;
+    flex-direction: row;
+    position: relative;
+    left: 15px;
+    top: 65px;
+  }
+  .serviceBox:nth-of-type(2){
+    align-self: flex-end;
+    justify-content: flex-end;
+    flex-direction: row;
+    margin-bottom: -6rem;
+    position: relative;
+    left: -45px;
+    top: 6rem;
+    padding: 11px;
+  }
+  .serviceBox:last-of-type{
+    position: relative;
+    top: 6rem;
+    right: 20px;
+    flex-direction: row;
+  }
+  #userContainer {
+    height: 85vh;
+  }
+  #userControlsContainer h1 {
+    font-size: 2.15rem;
+  }
+  #userImage img {
+    height: 45%;
+    width: 80%;
+  }
+  #listing_info_Container #userAbout h3 {
+    font-size: 1.65rem;
+  }
+  #userAbout p {
+    line-height: 35px;
+    font-size: 1.35rem;
+    }
+  .contactModal {
+    width: 75%;
+    height: 50%;
+  }
+  #contactForm input,
+  #contactForm textarea {
+    width: 60%;
+  }
+  .positive, .negative {
+    width: 75%;
+    height: 32%;
+  }
+}
+@media only screen and (max-width: 768px) and (min-height: 1024px){
+  li{
+    font-size: 1rem;
+  }
+  #listingShowDescription {
+    height: auto;
+  }
+  #userImage img {
+      height: 45%;
+      width: 80%;
+  }
+  #userAbout p {
+    font-size: 1.25rem;
+  }
+  .cycle-overlay{
+    padding: 5px;
+    width: 98%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
+  }
+  #aboutImgContainer {
+    margin-left: unset;
+    margin-right: unset;
+    width: 69%;
+    height: 44%;
+    opacity: .9;
+  }
+  #aboutDescription p {
+    font-size: 1rem;
+    width: 87%;
+    margin-left: -1rem;
+  }
+  .serviceBox{
+    height: auto;
+    flex-direction: row;
+    background: rgba(255, 255, 255, .75);
+    border-radius: 25px;
+  }
+  .serviceBox p{
+    text-align: center;
+  }
+  .serviceBox:first-of-type{
+    align-self: flex-start;
+    margin-top: 4rem;
+    flex-direction: row;
+    position: relative;
+    left: 15px;
+    top: 33px;
+  }
+  .serviceBox:nth-of-type(2){
+    align-self: flex-end;
+    justify-content: flex-end;
+    flex-direction: row;
+    margin-bottom: -6rem;
+    position: relative;
+    left: -45px;
+    padding: 11px;
+  }
+  .serviceBox:last-of-type{
+    margin-top: 6rem;
+    position: relative;
+    right: 20px;
+    flex-direction: row;
+  }
+  #leftSideListingInfo, #rightSideListingInfo {
+    width: 100%;
+  }
+  .listingphotos input[type='submit'] {
+    padding: 10px 30px;
+  }
+  .contactModal {
+    width: 75%;
+  }
+  #contactForm input,
+  #contactForm textarea {
+    width: 60%;
+  }
+  .positive, .negative {
+    width: 75%;
+    height: 32%;
+  }
+}
+@media only screen and (max-width: 600px){
+  nav{
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  .navBar{
+    display: none;
+  }
+  .hamburger{
+    display: block;
+  }
+  .contactModal{
+    width: 100%;
+  }
+  #contactForm input, #contactForm textarea{
+    width: 75%;
+  }
+  #contactForm input[type='submit'] {
+    width: 35%;
+    padding: 15px 0;
+  }
+  .cycle-overlay{
+    padding: 5px;
+    width: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  h1{
+    padding-top: 3rem;
+  }
+  #aboutImgContainer img{
+    height: 90%;
+  }
+  #aboutSection{
+    height: auto;
+  }
+  #aboutSection hr{
+    margin-bottom: 3rem;
+  }
+  #aboutImgContainer{
+    margin-left: unset;
+    margin-right: unset;
+    width: 90%;
+    margin-bottom: 1.5rem;
+  }
+  #aboutSectionInnerContainer{
+    flex-direction: column;
+  }
+  #aboutDescription{
+    width: 80%;
+  }
+  #aboutDescription p{
+    line-height: 145%;
+    font-size: 1.13rem;
+  }
+  #serviceSection{
+    height: auto;
+  }
+  #serviceContainer{
+    margin-top: 2.5rem;
+    height: auto;
+    flex-direction: column;
+  }
+  .serviceBox{
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .serviceBox svg{
+    height: 5.5rem;
+  }
+  .serviceBox p{
+    margin-top: unset;
+    margin-bottom: 3rem;
+  }
+  .listingCard {
+      width: 100%;
+      padding: 5px;
+  }
+  .listingAddress {
+    padding: 15px;
+  }
+  .addressH3 {
+    font-size: 1.3rem;
+  }
+  .addressP, .addressCity {
+    font-size: 1.15rem;
+    padding-top: 1px;
+  }
+  .statColumn svg {
+    height: 35px;
+    width: 35px;
+  }
+  .statColumn h3{
+    font-size: 1.1rem;
+  }
+  .ListingBrief{
+    padding: 10px;
+  }
+  .ListingBrief a {
+    font-size: 1.05rem;
+  }
+  .statColumn p{
+    font-size: 1rem;
+  }
+  .listingStatsTop{
+    padding-bottom: 10px;
+  }
+  #listingShowContainer{
+    width: 95%;
+  }
+  #leftShowImgContainer {
+      width: 100%;
+  }
+  #listingShowAddress h1, #listingShowAddress h2 {
+      font-size: 1.55rem;
+  }
+  #listingShowStats {
+    margin: 35px 0;
+  }
+  #listingShowStats .statColumn img, #listingAmenities .statColumn img {
+    height: 40px;
+    width: 40px;
+  }
+  #listingShowStats{
+    height: auto;
+    justify-content: space-between;
+  }
+  #listingEmailUsBtn span {
+    font-size: 1.3rem;
+  }
+  #listingEmailUsBtn span a {
+    font-size: 1.1rem;
+    padding: 20px 25px;
+  }
+  #listedBy a {
+    font-size: 1rem;
+  }
+  #listingShowDescription {
+    height: auto;
+    padding: unset;
+    padding-bottom: 3rem;
+  }
+  #footerSignIn_register{
+    display: none;
+  }
+  #userContainer {
+    flex-direction: column;
+  }
+  #userControlsContainer h1 {
+      font-size: 1.75rem;
+      margin-bottom: 20px;
+  }
+  #imageContainer {
+    width: 95%;
+  }
+  #userImage img {
+    height: 85%;
+    width: 85%;
+  }
+  #listing_info_Container {
+    width: 100%;
+    height: auto;
+    padding-bottom: 4rem;
+  }
+  #listing_info_Container #userAbout h3 {
+    font-size: 1.4rem;
+    margin-bottom: .5rem;
+  }
+  #userAbout p {
+      line-height: 30px;
+      font-size: 1.1rem;
+  }
+  #OuterFormContainer {
+      height: 702px;
+      width: 95%;
+      flex-direction: column;
+  }
+  #loginForm {
+      width: 90%;
+      flex-direction: column;
+  }
+  #formContainer {
+      width: 100%;
+      border-bottom: .75px solid #565656;
+      border-right: unset;
+  }
+  #formContainer form {
+      width: 100%;
+  }
+  #registerContainer {
+      border-top: .75px solid #565656;
+      border-left: unset;
+      width: 100%;
+  }
+  #registerContainer a {
+      padding: 20px 35px;
+  }
+  #loginSignUpContainer {
+    margin-bottom: 6rem;
+  }
+  .positive, .negative {
+      width: 95%;
+      height: 65%;
+  }
+  #footerNav{
+    display: none;
+  }
+  .signIn_register{
+    display: none;
+  }
+  #newListingMainContainer {
+      height: auto;
+      width: 100%;
+      margin-bottom:4rem;
+  }
+  #newListingForm {
+      flex-direction: column;
+      width: 93%;
+  }
+  #leftSideListingInfo, #rightSideListingInfo {
+      width: 98%;
+  }
+  #listingAddress input, #listingInfo input, #listingphotos input {
+    width: 50%;
+    margin: 5px;
+  }
+  #listingInfoContainer input{
+    width: 44%;
+    margin: 5px;
+  }
+  #listingInfo {
+      padding: 2rem 0;
+  }
+  #listingphotos textarea {
+      border: .5px solid rgba(0, 0, 0, .5);
+  }
+  #listingphotos{
+    padding: unset;
+  }
+  #listingAddress{
+    padding-top: 3rem;
+  }
+  #listingphotos input[type='file'] {
+      margin: 30px 0;
+  }
+  #rightSideListingInfo input[type="submit"]{
+    padding: 15px 30px;
+    margin-bottom: 2rem;
+  }
+  .statColumn{
+    flex-basis: 35%;
+  }
+  #listingShowStats h3{
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 600px) and (min-height: 800px){
+  #userImage img {
+    height: 75%;
+    width: 85%;
+  }
+}
+@media only screen and (max-width: 325px){
+    #listingsContainer {
+    margin-bottom: 4rem;
+  }
+    #userImage {
+        height: 250px;
+    }
+    #userContainer {
+      height: auto;
+  }
+  #listingAmenities {
+      height: 145px;
+  }
+  #listingShowDescription {
+    margin-top: 2rem;
+  }
+  #contactForm h4 {
+      font-size: 1.35rem;
+  }
+  .contactModal {
+    height: 350px;
+  }
+}

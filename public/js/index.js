@@ -13,8 +13,18 @@ $('.contactLink').on('click', function(){
               'opacity': '1'
          });
      });
-     //Error/success message fade
-     // $('.ui.positive.message').delay(2000).fadeOut();
-     // $('.ui.negative.message').delay(2000).fadeOut();
-     //
+     $('.hamburger--squeeze').on('click', function(){
+       $('.hamburger').toggleClass('is-active');
+       $('#mobileNav').toggleClass('active');
+       $('body').toggleClass('bodyOverflow');
+     });
+     function navToggle(){
+       $(this).toggleClass('is-active');
+       $('#mobileNav').toggleClass('active');
+       $('body').toggleClass('bodyOverflow');
+     }
+     // Error/success message fade
+     $('.ui.positive.message').delay(2000).fadeOut();
+     $('.ui.negative.message').delay(2000).fadeOut();
+
   })
