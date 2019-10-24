@@ -10,7 +10,14 @@ var userSchema = new mongoose.Schema({
   image: {type: String, default:'#'},
   resetPasswordToken: String,
   resetPasswordToken: Date,
-  confirmation: {type: Boolean, default: false}
+  confirmation: {type: Boolean, default: false},
+  listings: {
+    id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Listing'
+    },
+    address: String
+    }
 });
 
 userSchema.plugin(passportLocalMongoose);

@@ -4,6 +4,7 @@ const passport = require('passport');
 const User = require('../models/user');
 const async = require("async");
 const nodemailer = require("nodemailer");
+const middleware = require('../middleware/index');
 const crypto = require("crypto");
 let Listing = require('../models/listing');
 require("dotenv").config();
@@ -37,11 +38,11 @@ router.get('/', function(req, res){
   })
 });
 
-router.get('/new', function(req, res){
+router.get('/new', middleware.isLoggedIn, function(req, res){
   res.render('listings/new');
 });
 
-router.post('/', upload.single('image'), function(req, res){
+router.post('/', middleware.isLoggedIn, upload.single('image'), function(req, res){
   if(!req.file){
     req.flash('error', 'You need to upload an image.');
     res.redirect('/listings');
@@ -78,5 +79,24 @@ router.get('/:id', function(req, res){
     }
     res.render('listings/show', {listing: listing});
   })
+});
+router.delete("/:id", middleware.isLoggedIn, middleware.checkListingOwnership, function(req, res){
+  Listing.findById(req.params.id, async function(err, listing){
+    if(err){
+      req.flash("error", err.message);
+      return res.redirect("back");
+    } else {
+      try{
+                //  delete the campground
+                await cloudinary.v2.uploader.destroy(listing.imageId);
+                listing.remove();
+                req.flash("success", "Success!");
+                res.redirect('/listings');
+      } catch(err){
+        console.log(err);
+        res.redirect('back');
+      }
+    }
+  });
 });
 module.exports = router;

@@ -20,6 +20,19 @@
           <h3>About</h3>
           <p><%= user.description %></p>
         </div>
+        <div id="AgentListings">
+          <% if(currentUser && currentUser.confirmation === true){ %>
+          <h3>Listings</h3>
+          <% listings.forEach(function(listing){ %>
+            <% if(currentUser && listing.author.id.equals(currentUser._id)){ %>
+            <form action="/listings/<%= listing._id %>?_method=DELETE" method="POST" class="delete-form">
+              <a href="/listings/<%= listing._id %>" class="addressP"><%= listing.address %></a>
+              <button class="btn btn-danger">Delete</button>
+            </form>
+            <% } %>
+            <% }); %>
+            <% } %>
+        </div>
       </div>
     </div>
 <% include ../partials/footer %>
