@@ -1,0 +1,58 @@
+<% include ../partials/header %>
+
+<section id="editListingSection">
+  <h1>Edit <%= listing.address %></h1>
+  <form id="newListingForm" action="/<%= listing._id %>?_method=PUT" method="post" enctype="multipart/form-data">
+    <div id="leftSideListingInfo">
+      <div id="listingAddress">
+        <h2>Listing Address</h2>
+        <div>
+          <label for="address">Address</label>
+          <input type="text" name="address" value="<%= listing.address %>">
+          <label for="city">City</label>
+          <input type="text" name="city" value="<%= listing.city %>">
+        </div>
+        <div>
+          <label for="zip">Zip Code</label>
+        <input type="text" name="zipCode" value="<%= listing.zipCode %>">
+        </div>
+      </div>
+      <div id="listingInfo">
+        <h2>Listing Info</h2>
+        <div id="listingInfoContainer">
+          <div class="">
+            <label for="sqft">SqFt</label>
+            <input type="text" name="sqft" value="<%= listing.sqft %>">
+            <label for="lotSize">Lot Size</label>
+            <input type="text" name="listing[lotSize]" value="<%= listing.lotSize %>">
+          </div>
+          <div class="">
+            <label for="built">Beds</label>
+            <input type="text" name=beds" value="<%= listing.bedrooms %>">
+            <label for="baths">Baths</label>
+            <input type="text" name="bathrooms" value="<%= listing.bathrooms %>">
+          </div>
+          <div class="">
+            <label for="price">Price</label>
+            <input type="text" name="price" value="$<%= listing.price %>">
+            <label for="built">Built</label>
+            <input type="text" name="yearBuilt" value="Built <%= listing.yearBuilt %>">
+          </div>
+          <div class="">
+            <label for="amenities">Amenities</label>
+            <input type="text" name="amenities" value="<%= listing.amenities %>">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="rightSideListingInfo">
+      <div id="listingphotos">
+        <label for="description">Description</label>
+        <textarea name=" description"><%= listing.description %></textarea>
+        <input type="file" name="image" accept="image/*" value="Upload Photos">
+      </div>
+      <input type="submit" value="Upload">
+    </div>
+  </form>
+</section>
+<% include ../partials/footer %>

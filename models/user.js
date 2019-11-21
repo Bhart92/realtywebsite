@@ -1,5 +1,5 @@
-var mongoose = require('mongoose');
-var passportLocalMongoose = require('passport-local-mongoose');
+const mongoose = require('mongoose');
+const passportLocalMongoose = require('passport-local-mongoose');
 
 var userSchema = new mongoose.Schema({
   username: String,
@@ -7,7 +7,8 @@ var userSchema = new mongoose.Schema({
   password: String,
   email: {type: String, unique: true, required: true},
   description: String,
-  image: {type: String, default:'#'},
+  image: {type: String, default: '#'},
+  imageId: {type: String, default: '#'},
   resetPasswordToken: String,
   resetPasswordToken: Date,
   confirmation: {type: Boolean, default: false},
@@ -17,7 +18,9 @@ var userSchema = new mongoose.Schema({
       ref: 'Listing'
     },
     address: String
-    }
+  },
+  resetPasswordToken: String,
+  resetPasswordExpires: Date
 });
 
 userSchema.plugin(passportLocalMongoose);

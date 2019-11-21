@@ -1,1735 +1,2277 @@
-*{
-  font-size: 18px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+* {
+    font-size: 18px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
 }
-body{
-  height: auto;
-  overflow-x: hidden;
-  background-color: #ffffff;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%2387ceeb' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%2300bfff' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%2386ceee' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%233fa9db' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%2386cef1' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%235093b8' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%2386cef4' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23587e96' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%2386cef7' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%23596a75' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%2387cefa' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23565656' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
-  background-attachment: fixed;
-  background-size: cover;
-}
-a, li{
-  color: #565656;
-  font-size: .85rem;
-  padding: 10px;
-  margin: -10px;
-  text-decoration: none;
-  transition: all .35s ease-in-out;
-  font-family: 'Lato', sans-serif;
-}
-a:link, a:visited, li{
-  color: #565656;
-}
-a:hover, a:active, li:hover{
-  color: rgba(0, 191, 255, .85);
-  cursor: pointer;
-}
-.fa-home{
-  color: #565656;
-  font-size: 2.5rem;
-}
-h1{
-  text-align: center;
-  font-size: 1.5rem;
-  padding-top: 5rem;
-  padding-bottom: 1rem;
-  font-family: 'Lato', sans-serif;
-}
-h2{
-  font-family: 'Lato', sans-serif;
-  color: #000;
-}
-/* Navs */
-nav{
-  display: flex;
-  flex-direction: row;
-  height: 100px;
-  width: 100%;
-  background: #fff;
-  /* position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000; */
-}
-#navBarUl{
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: flex-end;
-  padding-bottom: 10px;
-  }
-.logoContainer{
-  flex-basis: 45%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.logoContainer h1, #footerLogo h1{
-  padding: unset!important;
-  font-size: 2rem;
-  font-family: 'Dancing Script', cursive!important;
-  color: deepskyblue;
-}
-.logoContainer h1 i{
-  color: #565656;
-  font-size: 2.5rem;
 
+body {
+    position: relative;
+    height: auto;
+    overflow-x: hidden;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%2387ceeb' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%2300bfff' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%2386ceee' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%233fa9db' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%2386cef1' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%235093b8' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%2386cef4' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23587e96' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%2386cef7' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%23596a75' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%2387cefa' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23565656' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover
 }
-.logoContainer h1 > span{
-  color: deepskyblue;
+
+a,
+li {
+    color: #565656;
+    font-size: .85rem;
+    padding: 10px;
+    margin: -10px;
+    text-decoration: none;
+    transition: all .35s ease-in-out;
+    font-family: Lato, sans-serif
 }
-.navBar{
-  flex-basis: 30%;
-  height: 100%;
+
+a:link,
+a:visited,
+li {
+    color: #565656
 }
-#mobileNav{
-  width: 100%;
-  height: 100vh;
-  background-color: #F9FAF6;
-  position: absolute;
-  top:0;
-  bottom:0;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 20;
-  opacity: 0;
-  transform: scale(0);
-  transition: transform .5s ease-in-out,
-            opacity .65s ease-in-out;
+
+a:active,
+a:hover,
+li:hover {
+    color: rgba(0, 191, 255, .85);
+    cursor: pointer
 }
-#mobileNav ul{
-  height: 65%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  margin-top: 3rem;
-  list-style: none;
-  padding: unset!important;
+
+.fa-home {
+    color: #565656;
+    font-size: 2.5rem
 }
-#mobileNav ul li a{
-  font-size: 1.5rem;
-  font-family: 'Forum', cursive;
+
+h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+    font-family: Lato, sans-serif
 }
-/* // */
-/* forms */
-.signIn_register{
-  flex-basis: 25%;
-  height: 100%;
+
+h2 {
+    font-family: Lato, sans-serif;
+    color: #000
 }
-.signIn_register ul{
-  flex-basis: 35%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: space-evenly;
-  padding-bottom: 10px;
+
+nav {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    width: 100%;
+    background: #fff
 }
+
+#navBarUl {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding-bottom: 10px
+}
+
+.logoContainer {
+    flex-basis: 45%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+#footerLogo h1,
+.logoContainer h1 {
+    padding: unset!important;
+    font-size: 2rem;
+    font-family: 'Dancing Script', cursive!important;
+    color: #00bfff
+}
+
+.logoContainer h1 i {
+    color: #565656;
+    font-size: 2.5rem
+}
+
+.logoContainer h1>span {
+    color: #00bfff
+}
+
+.navBar {
+    flex-basis: 30%;
+    height: 100%
+}
+
+#mobileNav {
+    width: 100%;
+    height: 110vh;
+    background-color: #f9faf6;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 20;
+    opacity: 0;
+    transform: scale(0);
+    transition: transform .5s ease-in-out, opacity .65s ease-in-out
+}
+
+#mobileNav ul {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    list-style: none;
+    padding: unset!important
+}
+
+#mobileNav ul li a {
+    font-size: 1.5rem;
+    font-family: 'Lato', sans-serif!important;
+}
+
+.signIn_register {
+    flex-basis: 25%;
+    height: 100%
+}
+
+.signIn_register ul {
+    flex-basis: 35%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    padding-bottom: 10px
+}
+
 .ui.selection.active.dropdown .menu {
-  border: none;
-  background: #fff;
+    border: none;
+    background: #fff
 }
+
 .ui.dropdown {
-  color: #565656;
-  border: none;
-  background: #fff;
-  font-size: .85rem;
-  font-family: 'Lato', sans-serif;
-  cursor: pointer;
+    color: #565656;
+    border: none;
+    background: #fff;
+    font-size: .85rem;
+    font-family: Lato, sans-serif;
+    cursor: pointer
 }
-.ui.dropdown .menu > .item {
-  font-size: .85rem;
-  color: #1C1B16;
+
+.ui.dropdown .menu>.item {
+    font-size: .85rem;
+    color: #1c1b16
 }
-.ui.dropdown > .dropdown.icon {
-  margin: unset;
+
+.ui.dropdown>.dropdown.icon {
+    margin: unset
 }
+
 .ui.dropdown .menu {
-  background: #fff;
-  z-index:101!important;
+    background: #fff;
+    z-index: 101!important
 }
+
 .ui.dropdown .menu>.item:hover {
-    background: rgba(0, 191, 255, 0.1);
+    background: rgba(0, 191, 255, .1)
 }
-#landingHeader{
-  height: 100vh;
+
+#landingHeader {
+    height: 100vh
 }
-.cycle-overlay div{
-  width: 85%;
+
+.cycle-overlay div {
+    width: 85%
 }
-.cycle-slideshow{
-  height: 100vh;
+
+.cycle-slideshow {
+    height: 100vh
 }
-.cycle-slideshow div{
-  background-position: center;
-  background-size: cover;
-  position: absolute;
-  background-attachment: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: 8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+.cycle-slideshow div {
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 8;
+    display: flex;
+    align-items: center;
+    justify-content: center
 }
-.cycle-slideshow #slide_one{
-  background-image: url(../img/house_one.jpg);
+
+.cycle-slideshow #slide_one {
+    background-image: url(../img/house_one.jpg)
 }
-.cycle-slideshow #slide_two{
-  background-image: url(../img/house_two.jpg);
-  background-position: bottom;
+
+.cycle-slideshow #slide_two {
+    background-image: url(../img/house_two.jpg);
+    background-position: bottom
 }
-.cycle-slideshow #slide_three{
-  background-image: url(../img/house_three.jpg);
+
+.cycle-slideshow #slide_three {
+    background-image: url(../img/house_three.jpg)
 }
-.cycle-slideshow #slide_four{
-  background-image: url(../img/house_four.jpg);
+
+.cycle-slideshow #slide_four {
+    background-image: url(../img/house_four.jpg)
 }
-.cycle-slideshow #slide_five{
-  background-image: url(../img/house_five.jpg);
+
+.cycle-slideshow #slide_five {
+    background-image: url(../img/house_five.jpg)
 }
-.cycle-slideshow #slide_six{
-  background-image: url(../img/house_six.jpg);
+
+.cycle-slideshow #slide_six {
+    background-image: url(../img/house_six.jpg)
 }
+
 .cycle-slideshow img:first-child {
-    position: static; z-index: 100;
+    position: static;
+    z-index: 100
 }
-/* pager */
+
 .cycle-pager {
-    text-align: center; width: 100%; z-index: 500; position: absolute; top: 10px; overflow: hidden;
+    text-align: center;
+    width: 100%;
+    z-index: 500;
+    position: absolute;
+    top: 10px;
+    overflow: hidden
 }
+
 .cycle-pager span {
-    font-family: arial; font-size: 50px; width: 16px; height: 16px;
-    display: inline-block; color: #ddd; cursor: pointer;
+    font-family: arial;
+    font-size: 50px;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    color: #ddd;
+    cursor: pointer
 }
+
 .cycle-pager span.cycle-pager-active {
-  color: #D69746;}
-.cycle-pager > * {
-  cursor: pointer;}
-/* caption */
+    color: #d69746
+}
+
+.cycle-pager>* {
+    cursor: pointer
+}
+
 .cycle-caption {
-  position: absolute; color: white; bottom: 15px; right: 15px; z-index: 700; }
-/* overlay */
+    position: absolute;
+    color: #fff;
+    bottom: 15px;
+    right: 15px;
+    z-index: 700
+}
+
 .cycle-overlay {
-  font-family: tahoma, arial;
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  z-index: 600;
-  background: black;
-  color: white;
-  padding: 15px;
-  opacity: .5;
-  transform: translate(0%, -50%);
-  height: 20%;
+    font-family: tahoma, arial;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    z-index: 600;
+    background: #000;
+    color: #fff;
+    padding: 15px;
+    opacity: .5;
+    transform: translate(0, -50%);
+    height: 20%
 }
-#aboutSection{
-  height: 100vh;
-  width: 100%;
+
+#aboutSection {
+    height: 100vh;
+    width: 100%
 }
-hr{
-  margin-bottom: 5rem;
-  width: 10%;
-  margin: 0 auto;
+
+hr {
+    margin-bottom: 5rem;
+    width: 10%;
+    margin: 0 auto
 }
-#aboutSectionInnerContainer{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: calc(100% - 104px);
-  width: 100%;
-}
-#aboutImgContainer img{
-  height: 75%;
-  width: 90%;
-  border-radius: 20px;
-  opacity: .9;
-}
-#aboutDescription{
-  width: 45%;
-  height: 100%;
-  display: flex;
+
+#aboutSectionInnerContainer {
+    display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    height: calc(100% - 104px);
+    width: 100%
 }
+
+#aboutImgContainer img {
+    height: 60%;
+    width: 90%;
+    border-radius: 2px;
+    opacity: .9
+}
+
+#aboutDescription {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
 #aboutDescription p {
-  line-height: 190%;
-  font-size: 1.1rem;
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  word-spacing: 3px;
-  text-align: justify;
+    line-height: 190%;
+    font-size: 1.1rem;
+    font-family: Lato, sans-serif;
+    font-weight: 300;
+    word-spacing: 3px;
+    text-align: justify
 }
-#aboutImgContainer{
-  margin-left: -2rem;
-  margin-right: 3.5rem;
-  width: 35%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+
+#aboutImgContainer {
+    margin-left: -2rem;
+    margin-right: 3.5rem;
+    width: 35%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
 }
+
 .holder {
-  position: relative;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 5rem;
-  }
+    position: relative;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5rem
+}
+
 .clip {
-    /* Clip edges, as some of the lines don't terminate nicely. */
-    overflow: hidden;
+    overflow: hidden
 }
+
 .smallLine {
-  position: absolute;
-  height: 10px;
-  width: 100%;
+    position: absolute;
+    height: 10px;
+    width: 100%
 }
+
 .smallLine1 {
-    background: linear-gradient(45deg, transparent, transparent 49%, #565656 49%, transparent 51%);
+    background: linear-gradient(45deg, transparent, transparent 49%, #565656 49%, transparent 51%)
 }
+
 .smallLine2 {
-    background: linear-gradient(-45deg, transparent, transparent 49%, rgba(0, 191, 255, 1) 49%, transparent 51%);
+    background: linear-gradient(-45deg, transparent, transparent 49%, rgba(0, 191, 255, 1) 49%, transparent 51%)
 }
+
 .smallLine {
-  background-size: 20px 20px;
+    background-size: 20px 20px
 }
+
 .line {
     position: absolute;
     width: 200px;
-    /* Height set to clip correctly basically background-size/2 + line width */
-    height: 26px;
-}
-.line1 {
-    background: linear-gradient(45deg, transparent, transparent 49%, red 49%, transparent 51%);
-}
-.line2 {
-    background: linear-gradient(-45deg, transparent, transparent 49%, red 49%, transparent 51%);
-}
-.line {
-    /* Must be after background definition. */
-    background-size: 50px 50px;
-}
-#serviceSection{
-  height: 100vh;
-  width: 100%;
-}
-#serviceContainer{
-  height: 65%;
-  width: 90%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: center;
-  margin: 0 auto;
-}
-.serviceBox{
-  width: 35%;
-  height: 65%;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%2387ceeb' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%2300bfff' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%2386ceee' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%233fa9db' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%2386cef1' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%235093b8' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%2386cef4' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23587e96' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%2386cef7' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%23596a75' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%2387cefa' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23565656' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
-  background-attachment: fixed;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.serviceBox svg{
-  height: 5.5rem;
-}
-.serviceBox p{
-  width: 75%;
-  margin-top: 1rem;
-  line-height: 25px;
-  text-align: justify;
-}
-.serviceBox p:first-letter{
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-footer{
-  opacity: .9;
-  height: 150px;
-  background: #fff;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: center;
-  position: relative;
-}
-#footerNav{
-  height: 100%;
-  flex-basis: 35%;
-  display: flex;
-  align-items: center;
-  padding-left: 10px;
-}
-#footerNavUl{
-  display: flex;
-  height: 100%;
-  height: 90%;
-  justify-content: space-around;
-  flex-direction: column;
-}
-#footerNavUlColOne{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 50%;
-  align-items: flex-start;
-  width: 35%;
-  padding-left: 20px;
-}
-#footerNavUlColTwo{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 50%;
-  align-items: flex-start;
-  width: 35%;
-  padding-left: 20px;
-}
-#footerLogo{
-  height: 100%;
-  flex-basis: 35%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#footerSignIn_register{
-  flex-basis: 35%;
-  height: 100%;
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 10px;
-  align-items: center;
-}
-#footerSignIn{
-  display: flex;
-  height: 50%;
-  align-items: flex-end;
-  justify-content: space-around;
-  flex-direction: column;
-  padding-right: 20px;
-}
-#footerSignIn li:first-of-type{
-  margin-bottom: -30px;
-}
-#landingContainer{
-  height: auto;
-  width: 100%;
-}
-/* //// */
-/* Listings Section */
-#listingsContainer{
-  height: auto;
-  width: 100%;
-  background-color: #ffffff;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%2387ceeb' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%2300bfff' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%2386ceee' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%233fa9db' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%2386cef1' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%235093b8' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%2386cef4' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23587e96' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%2386cef7' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%23596a75' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%2387cefa' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23565656' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
-  background-attachment: fixed;
-  background-size: cover;
-  display: flex;
-  flex-direction: row;
-}
-#leftContainer{
-  width: 0%;
-  height: 100%;
-  position: relative;
-  background: rgba(255, 255, 255, .75);
-  z-index: 102;
-  display: flex;
-  text-align: center;
-  align-items: stretch;
-  justify-content: space-evenly;
-  flex-direction: column;
-  box-shadow: 5px 0 5px -2px rgba(0, 0, 0, .5);
-}
-#rightContainer{
-  width: 100%;
-  height: 100%;
-  position: relative;
-  z-index: 101;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-#filterContainer{
-  height: 65%;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-direction: column;
-  text-align: left;
-}
-button{
-  background: transparent;
-  border: .5px solid #565656;
-  border-radius: 20px;
-  padding: 3px 10px;
-}
-.listingCard{
-  width: 50%;
-  height: 325px;
-  padding: 25px;
-  opacity: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all .25s ease-in;
-}
-.cardImage{
-  height: 100%;
-  width: 85%;
-  position: relative;
-  z-index: 2;
-  overflow: hidden;
-  border-radius: 10px;
-}
-.cardImage img{
-  height: 100%;
-  width: 100%;
-}
-.cardImage:hover .ListingBrief,
-.cardImage:hover .listingAddress{
-  transform: translate(0, 0%);
-  opacity: 1;
-}
-.listingAddress{
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: white;
-  padding: 5px;
-  opacity: 0;
-  transform: translate(0, -200%);
-  background: rgba(255, 255, 255, .85);
-  transition: transform .35s ease-in-out,
-              opacity .35s ease-in-out;
-  z-index: 1;
-}
-.ListingBrief{
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  padding: 20px;
-  padding-bottom: 0;
-  opacity: 0;
-  transform: translate(0, 200%);
-  background: rgba(255, 255, 255, .85);
-  transition: transform .37s ease-in-out,
-              opacity .35s ease-in-out;
-  z-index: 1;
-}
-.ListingBrief a{
-  padding: 15px;
-  padding-right: unset;
-}
-.readMoreContainer{
-  width: 100%;
-  display: flex;
-  position: relative;
-  justify-content: flex-end;
-}
-.listingStatsTop, .listingStatsBottom{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  padding: 5px;
-  padding-bottom: 15px;
-}
-.statColumn{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.statColumn img{
-  height:20px;
-  width: 20px;
-}
-.statColumn svg{
-  height: 20px;
-  width: 20px;
-}
-/* //// */
-/* Login_signUp Section */
-#loginSignUpContainer{
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  flex-flow: wrap;
-}
-#OuterFormContainer{
-  height: 350px;
-  width: 65%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  flex-flow: wrap;
-}
-#loginForm{
-  width: 90%;
-  height: 100%;
-  background: rgba(255, 255, 255, .95);
-  border-radius: 25px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  position: relative!important;
-}
-.loginSignupForm{
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-direction: column;
-}
-#formContainer{
-  position: relative;
-  z-index: 5;
-  width: 50%;
-  border-right: .75px solid #565656;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-#formContainer form{
-  width: 100%;
-  height: 50%;
-}
-.loginSignupForm input, textarea{
-  width: 50%;
-  font-size: .9rem;
-  border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, .45);
-  color: #000;
-  outline: none;
-}
-#signUpFormContainer{
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-evenly;
-  background: rgba(0, 191, 255, .5);
-  clip-path: circle(10% at 100% 0%);
-  position: absolute;
-  top: 0;
-  right: 0;
-  border-radius: 25px;
-  transition: all .5s ease-in-out;
-}
-#signUpForm{
-  height: 70%;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-direction: column;
-  width: 100%;
-}
-.fa-times{
-  transform: scale(0);
-  font-size: 2rem;
-  padding: 10px;
-  margin: -10px;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  transition: .35s ease-in-out;
-}
-.fa-times:hover{
-  cursor: pointer;
-  color: rgba(0, 191, 255, 1);
-}
-#signUpForm input[type='text']{
-  text-align: center;
-}
-#signUpForm input[type='text'],
-#signUpForm input[type='password'],
-#signUpForm input[type='email'],
-#signUpForm textarea{
-  font-size: .9rem;
-  width: 85%;
-  border: none;
-  border-bottom: 1px solid #000;
-  outline: none;
-  background-color: transparent;
-  color: #000;
-  margin-top: 1rem;
-}
-#signUpForm input[type='text']:focus,
-#signUpForm input[type='password']:focus,
-#signUpForm input[type='email']:focus,
-#signUpForm textarea:focus{
-  border-bottom: 1px solid rgba(0, 191, 255, 1);
-}
-#signUpForm textarea{
-  height: 150px;
-  width: 85%;
-}
-#signUpForm input[type='submit']{
-  font-size: .9rem;
-  margin-top: 1rem;
-}
-#signUpForm input[type='submit']:hover{
-  border: 1px solid rgba(0, 191, 255, 1);
-  color: rgba(0, 191, 255, 1);
-  cursor: pointer;
-  border-radius: 5px;
-}
-input[type='submit']{
-  border: 1px solid rgba(0, 0, 0, .35);
-  color: #000;
-  border-radius: 25px;
-  background-color: transparent;
-  width: unset;
-  padding: 5px 20px;
-  transition: all .35s ease-in-out;
-}
-input[type='submit']:hover, #registerContainer a:hover{
-  border: 1px solid rgba(0, 191, 255, .45);
-  color: rgba(0, 191, 255, 1);
-  cursor: pointer;
-  border-radius: 5px;
-}
-#orDiv{
-  height: 50px;
-  width: 50px;
-  z-index: 6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: #fff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 1px solid rgba(0, 191, 255, .5);
-  transition: opacity .25s ease-in-out;
-}
-p{
-  font-family: 'Lato', sans-serif;
-  color: rgba(0, 0, 0, .85);
-  font-size: .95rem;
-}
-#registerContainer{
-  border-left: .75px solid #565656;
-  width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  position: relative;
-}
-#registerContainer a{
-  border: 1px solid rgba(0, 0, 0, .35);
-  color: #000;
-  border-radius: 25px;
-  background-color: transparent;
-  padding: 8px 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-#mainFormColumnContainer{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: row;
-}
-#signUpRightContainer, #signUpLeftContainer{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-#signUpRightContainer input, #signUpLeftContainer input{
-  text-align: center;
-}
-#signUpRightContainer{
-  align-items: flex-end;
-}
-#signUpLeftContainer{
-  align-items: flex-start;
-}
-textarea{
-  resize:none;
-  height: 300px;
-}
-#innerSignUpContainer{
-  width: 100%;
-  height: 75%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: column;
-}
-#registerForm{
-  width: 75%;
-  height: 100%;
-  background: rgba(255, 255, 255, .85);
-  border-radius: 25px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-}
-.positive, .negative{
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
-  height: 60%;
-  border-radius: 25px;
-  z-index: 1000;
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  background-color: #ffffff;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%2387ceeb' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%2300bfff' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%2386ceee' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%233fa9db' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%2386cef1' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%235093b8' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%2386cef4' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23587e96' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%2386cef7' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%23596a75' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%2387cefa' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23565656' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
-  background-size: cover;
-}
-.positive .header p, .negative .header p{
-  color: #000;
-}
-#userControlsContainer{
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: row;
-}
-#userControlsContainer h1{
-  font-size: 1.65rem;
-  margin-bottom: 35px;
-}
-#userContainer{
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-}
-#userUpload{
-  align-self: flex-start;
-  flex-basis: 25%;
-  width: 100%;
-}
-#userImage{
-  height: calc(100% - 25px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-#userImage img{
-  height: 55%;
-  width: 55%;
-}
-label{
-  font-family: 'Lato', sans-serif;
-  font-size: 1.05rem;
-}
-input[type="file"]{
-  padding-top: 2px;
-  margin-bottom: -10px;
-  font-size: .95rem;
-  font-family: 'Lato', sans-serif;
-}
-#uploadContainer{
-  padding-left: 35px;
-}
-#imageContainer{
-  width: 50%;
-  height: 100%;
-}
-#newListingMainContainer{
-  height: 105vh;
-  margin: 0 auto;
-  width: 95%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-#newListingMainContainer h1{
-  padding-top: unset;
-}
-#newListingForm{
-  margin: 0 auto;
-  height: 65%;
-  width: 90%;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.75);
-  border-radius: 25px;
-}
-#leftSideListingInfo, #rightSideListingInfo{
-  width: 45%;
-}
-#listingAddress, #listingInfo, #listingphotos{
-  padding: 1rem 0;
-}
-#listingphotos input[type='file']{
-  width: 100%;
-  background: #fff;
-}
-#listingphotos textarea{
-  resize: none;
-  height: 175px;
-  width: 100%;
-  outline: none;
-  border: none;
-}
-#listingphotos textarea:focus, #listingphotos input[type='file']:focus{
-  outline: #00BFFF;
-  border: 1px solid #00BFFF;
-}
-#listingAddress input, #listingInfo input, #listingphotos input{
-  margin: 10px;
-  font-size: .95rem;
-  color: #000;
-}
-#listingAddress input:focus, #listingInfo input:focus, #listingphotos input:focus{
-  outline: #00BFFF;
-  border: 1px solid #00BFFF;
-}
-#listing_info_Container{
-  width: 50%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  word-wrap: break-word;
-}
-#listing_info_Container #userListingContainer{
-  height: 60%;
-  width: 100%;
-  overflow-y: scroll;
-}
-#listing_info_Container #userAbout{
-  height: 40%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-#listing_info_Container #userAbout h3{
-  font-size: 1.3rem;
-  margin-bottom: 2rem;}
-#userAbout p{
-  width: 85%;
-  text-align: justify;
-  padding: 15px;
-  line-height: 25px;
-  font-size: 1.05rem;
-}
-h3{
-  font-family: 'Lato', sans-serif;
-  font-size: .95rem;
-}
-#listingphotos{
-  width: 100%;
-  display: flex;
-  align-content: center;
-  justify-content: space-around;
-  flex-direction: column;
-  margin: 0 auto;
-  height: auto;
-}
-#listingphotos input{
-  height: 100%;
-}
-#listingAddress, #listingInfoContainer{
-  display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.addressH3{
-  font-size: 1.2rem;
-  padding-top: 5px;
-  padding-left: 5px;
-  font-weight: 600;
-}
-.addressP, .addressCity{
-  font-size: 1.1rem;
-  color: #000;
-  padding-left: 5px;
-}
-#listingAddress div{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-#listingInfoContainer{
-  width: 100%;
-  margin: 0 auto;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
-#listingInfo{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-#flatIconCred{
-  position: absolute;
-  bottom:.25rem;
-  font-size: .35rem;
-}
-#flatIconCred a{
-  font-size: .35rem;
-  padding: 0 10px;
-}
-.contactModal{
-  display: none;
-  height: 450px;
-  width: 50%;
-    }
-#contactForm{
-  height: 85%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-}
-#contactForm h4{
-  font-size: 1.5rem;
-  font-family: 'Lato', sans-serif;
-}
-#contactForm input{
-  width: 50%;
-  outline: none;
-  border: none;
-  border-bottom: .35px solid #565656;
-  margin: 8px;
-  font-family: 'Lato', sans-serif;
-  font-size: .9rem;
-  opacity: .85;
-  transition: all .1s ease-in;
-}
-#contactForm textarea{
-  height: 125px;
-  opacity: .85;
-  background: transparent;
-  transition: all .1s ease-in;
-}
-#contactForm input[type='submit']{
-  border: .5px solid #000;
-  width: 25%;
-  transition: all .2s ease-in-out;
-  padding: 10px 0;
-}
-#contactForm input:focus, #contactForm textarea:focus{
-  outline:none;
-  opacity: 1;
-  background: rgba(255, 255, 255, .85);
-}
-#contactFormContainer{
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  background-color: #ffffff;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%2387ceeb' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%2300bfff' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%2386ceee' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%233fa9db' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%2386cef1' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%235093b8' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%2386cef4' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23587e96' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%2386cef7' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%23596a75' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%2387cefa' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23565656' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
-  background-size: cover;
-  background-position: top;
-  border-radius: 15px;
-}
-#listingShowContainer{
-  height: auto;
-  width: 90%;
-  margin: 0 auto;
-  margin-top: 2rem;
-  display: block;
-}
-#MainShowImgContainer{
-  height: 445px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-#leftShowImgContainer{
-  width: 70%;
-  height: 100%;
-}
-.mySlides{
-  height: 100%;
-  width: 100%;
-}
-.mySlides img{
-  height: 100%;
-  width: 100%;
-}
-#mainShowInfoContainer{
-  height: auto;
-  width: 80%;
-  margin: 0 auto;
-  position: relative;
-  margin-bottom: 5rem;
-}
-#listingShowAddress{
-  padding-top: 1rem;
-  width: 85%;
-  margin: 0 auto;
-  text-align: center;
-  }
-#listingShowAddress h1{
-  padding: unset;
-  text-align: unset;
-}
-#listingShowAddress h1, #listingShowAddress h2{
-  font-size: 1.5rem;
-  display: inline;
-}
-#listingShowAddress h2{
-  display: inline;
-}
-#listingShowStats{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-flow: wrap;
-  height: 115px;
-}
-#listingShowStats .statColumn svg {
-    height: 30px;
-    width: 30px;
-}
-#listingShowStats h3, #listingShowStats p{
-  font-size: 1.05rem;
-  font-weight: 400;
-}
-#listingEmailUsBtn{
-  height: 225px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-#listingEmailUsBtn span{
-  font-size: 1.2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-}
-#listingEmailUsBtn span a{
-  text-align: center;
-  border-radius: 20px;
-  margin: 25px;
-  margin-bottom: 0;
-  background: limegreen;
-  color: #000;
-  padding: 15px 20px;
-  border: 1px solid transparent;
-  transition: all .35s ease-in-out;
-}
-#listingEmailUsBtn span a:hover{
-  background: transparent;
-  border: 1px solid limegreen;
-}
-#listingAmenities{
-  height: 115px;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-flow: wrap;
-}
-#listingShowDescription{
-  height: 345px;
-  display: flex;
-  padding: 3.5rem;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
-  word-wrap: break-word;
-}
-#listingShowDescription h2{
-  align-self: flex-start;
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-#listingShowDescription p{
-  line-height: 35px;
-  word-break: break-word;
-}
-#listedBy a{
-  font-family: 'Lato', sans-serif;
-  color: rgba(0, 0, 0, .85);
-  font-size: .95rem;
-}
-.statColumn span{
-  font-size: 1.15rem;
-}
-#listingShowStats .statColumn img, #listingAmenities .statColumn img{
-  height: 25px;
-  width: 25px;
-}
-#mobileH4{
-  display: none;
-}
-.active{
-  display: flex!important;
-  opacity: 1!important;
-  transform: scale(1)!important;
-  z-index: 1000!important;
-}
-.bodyOverflow{
-  overflow: hidden!important;
+    height: 26px
 }
 
-/* //// */
-@media only screen and (min-width: 1400px){
-  a, li {
-    font-size: 1rem;
-  }
-  h1 {
-    font-size: 2.05rem;
-  }
-  .logoContainer h1, #footerLogo h1 {
-    font-size: 2.5rem;
-  }
-  .cycle-overlay {
-    font-size: 1.25rem;
-  }
-  #aboutDescription p {
-    font-size: 1.2rem;
-  }
-  #aboutImgContainer img {
-    width: 100%;
-    margin-left: 1rem;
-  }
-  #aboutDescription p {
-    font-size: 1.3rem;
-  }
-  .serviceBox p {
-    line-height: 30px;
-    font-size: 1.25rem;
-  }
-  .serviceBox svg {
-    height: 5.5rem;
-    width: 6rem;
-  }
-  #userImage img {
-    height: 55%;
-    width: 65%;
-  }
-  #userAbout p {
-    line-height: 35px;
-    font-size: 1.25rem;
-  }
-  #listing_info_Container #userAbout h3 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  #userControlsContainer h1 {
-    font-size: 2rem;
-    margin-bottom: -2rem;
-  }
+.line1 {
+    background: linear-gradient(45deg, transparent, transparent 49%, red 49%, transparent 51%)
 }
-@media only screen and (width: 1024px) and (height: 1366px){
-  .cycle-overlay{
-    width: 95%;
-    margin: 0 auto;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .cycle-slideshow div {
-    font-size: 1.25rem;
-  }
-  h1 {
-    font-size: 2.5rem;
-    }
-  a, li {
-    font-size: 1.25rem;
-  }
-  .logoContainer h1, #footerLogo h1 {
-    font-size: 3rem;
-    }
-  #aboutImgContainer {
-      margin-left: unset;
-      margin-right: unset;
-      height: 60%;
-      width: 50%;
-    }
-  #aboutDescription p {
-    font-size: 1.35rem;
-  }
-  .serviceBox{
-    height: auto;
-    flex-direction: row;
-    background: rgba(255, 255, 255, .75);
-    border-radius: 25px;
-  }
-  .serviceBox p{
-    text-align: center;
-    line-height: 30px;
-    font-size: 1.2rem;
-  }
-  .serviceBox:first-of-type{
-    align-self: flex-start;
-    margin-top: 4rem;
-    flex-direction: row;
-    position: relative;
-    left: 15px;
-    top: 65px;
-  }
-  .serviceBox:nth-of-type(2){
-    align-self: flex-end;
-    justify-content: flex-end;
-    flex-direction: row;
-    margin-bottom: -6rem;
-    position: relative;
-    left: -45px;
-    top: 6rem;
-    padding: 11px;
-  }
-  .serviceBox:last-of-type{
-    position: relative;
-    top: 6rem;
-    right: 20px;
-    flex-direction: row;
-  }
-  #userContainer {
-    height: 85vh;
-  }
-  #userControlsContainer h1 {
-    font-size: 2.15rem;
-  }
-  #userImage img {
-    height: 45%;
-    width: 80%;
-  }
-  #listing_info_Container #userAbout h3 {
-    font-size: 1.65rem;
-  }
-  #userAbout p {
-    line-height: 35px;
-    font-size: 1.35rem;
-    }
-  .contactModal {
-    width: 75%;
-    height: 50%;
-  }
-  #contactForm input,
-  #contactForm textarea {
-    width: 60%;
-  }
-  .positive, .negative {
-    width: 75%;
-    height: 32%;
-  }
+
+.line2 {
+    background: linear-gradient(-45deg, transparent, transparent 49%, red 49%, transparent 51%)
 }
-@media only screen and (max-width: 768px) and (min-height: 1024px){
-  li{
-    font-size: 1rem;
-  }
-  #listingShowDescription {
-    height: auto;
-  }
-  #userImage img {
-      height: 45%;
-      width: 80%;
-  }
-  #userAbout p {
-    font-size: 1.25rem;
-  }
-  .cycle-overlay{
-    padding: 5px;
-    width: 98%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 25px;
-  }
-  #aboutImgContainer {
-    margin-left: unset;
-    margin-right: unset;
-    width: 69%;
-    height: 44%;
-    opacity: .9;
-  }
-  #aboutDescription p {
-    font-size: 1rem;
-    width: 87%;
-    margin-left: -1rem;
-  }
-  .serviceBox{
-    height: auto;
-    flex-direction: row;
-    background: rgba(255, 255, 255, .75);
-    border-radius: 25px;
-  }
-  .serviceBox p{
-    text-align: center;
-  }
-  .serviceBox:first-of-type{
-    align-self: flex-start;
-    margin-top: 4rem;
-    flex-direction: row;
-    position: relative;
-    left: 15px;
-    top: 33px;
-  }
-  .serviceBox:nth-of-type(2){
-    align-self: flex-end;
-    justify-content: flex-end;
-    flex-direction: row;
-    margin-bottom: -6rem;
-    position: relative;
-    left: -45px;
-    padding: 11px;
-  }
-  .serviceBox:last-of-type{
-    margin-top: 6rem;
-    position: relative;
-    right: 20px;
-    flex-direction: row;
-  }
-  #leftSideListingInfo, #rightSideListingInfo {
-    width: 100%;
-  }
-  .listingphotos input[type='submit'] {
-    padding: 10px 30px;
-  }
-  .contactModal {
-    width: 75%;
-  }
-  #contactForm input,
-  #contactForm textarea {
-    width: 60%;
-  }
-  .positive, .negative {
-    width: 75%;
-    height: 32%;
-  }
+
+.line {
+    background-size: 50px 50px
 }
-@media only screen and (max-width: 600px){
-  nav{
-    justify-content: space-between;
-    padding: 0 20px;
-  }
-  .navBar{
-    display: none;
-  }
-  .hamburger{
-    display: block;
-  }
-  .contactModal{
-    width: 100%;
-  }
-  #contactForm input, #contactForm textarea{
-    width: 75%;
-  }
-  #contactForm input[type='submit'] {
+
+#serviceSection {
+    height: 100vh;
+    width: 100%
+}
+
+#serviceContainer {
+    height: 65%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    margin: 0 auto
+}
+
+.serviceBox {
     width: 35%;
-    padding: 15px 0;
-  }
-  .cycle-overlay{
-    padding: 5px;
-    width: 95%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  h1{
-    padding-top: 3rem;
-  }
-  #aboutImgContainer img{
-    height: 90%;
-  }
-  #aboutSection{
-    height: auto;
-  }
-  #aboutSection hr{
-    margin-bottom: 3rem;
-  }
-  #aboutImgContainer{
-    margin-left: unset;
-    margin-right: unset;
-    width: 90%;
-    margin-bottom: 1.5rem;
-  }
-  #aboutSectionInnerContainer{
-    flex-direction: column;
-  }
-  #aboutDescription{
-    width: 80%;
-  }
-  #aboutDescription p{
-    line-height: 145%;
-    font-size: 1.13rem;
-  }
-  #serviceSection{
-    height: auto;
-  }
-  #serviceContainer{
-    margin-top: 2.5rem;
-    height: auto;
-    flex-direction: column;
-  }
-  .serviceBox{
-    width: 90%;
-    height: auto;
+    height: 65%;
+    background: transparent;
     display: flex;
     flex-direction: column;
-  }
-  .serviceBox svg{
-    height: 5.5rem;
-  }
-  .serviceBox p{
-    margin-top: unset;
-    margin-bottom: 3rem;
-  }
-  .listingCard {
-      width: 100%;
-      padding: 5px;
-  }
-  .listingAddress {
-    padding: 15px;
-  }
-  .addressH3 {
-    font-size: 1.3rem;
-  }
-  .addressP, .addressCity {
-    font-size: 1.15rem;
-    padding-top: 1px;
-  }
-  .statColumn svg {
-    height: 35px;
-    width: 35px;
-  }
-  .statColumn h3{
-    font-size: 1.1rem;
-  }
-  .ListingBrief{
-    padding: 10px;
-  }
-  .ListingBrief a {
-    font-size: 1.05rem;
-  }
-  .statColumn p{
-    font-size: 1rem;
-  }
-  .listingStatsTop{
-    padding-bottom: 10px;
-  }
-  #listingShowContainer{
-    width: 95%;
-  }
-  #leftShowImgContainer {
-      width: 100%;
-  }
-  #listingShowAddress h1, #listingShowAddress h2 {
-      font-size: 1.55rem;
-  }
-  #listingShowStats {
-    margin: 35px 0;
-  }
-  #listingShowStats .statColumn img, #listingAmenities .statColumn img {
-    height: 40px;
-    width: 40px;
-  }
-  #listingShowStats{
-    height: auto;
-    justify-content: space-between;
-  }
-  #listingEmailUsBtn span {
-    font-size: 1.3rem;
-  }
-  #listingEmailUsBtn span a {
-    font-size: 1.1rem;
-    padding: 20px 25px;
-  }
-  #listedBy a {
-    font-size: 1rem;
-  }
-  #listingShowDescription {
-    height: auto;
-    padding: unset;
-    padding-bottom: 3rem;
-  }
-  #footerSignIn_register{
-    display: none;
-  }
-  #userContainer {
-    flex-direction: column;
-  }
-  #userControlsContainer h1 {
-      font-size: 1.75rem;
-      margin-bottom: 20px;
-  }
-  #imageContainer {
-    width: 95%;
-  }
-  #userImage img {
-    height: 85%;
-    width: 85%;
-  }
-  #listing_info_Container {
+    align-items: center;
+    justify-content: center
+}
+
+.serviceBox svg {
+    height: 5.5rem
+}
+
+.serviceBox p {
+    width: 75%;
+    margin-top: 1rem;
+    line-height: 25px;
+    text-align: justify
+}
+
+.serviceBox p:first-letter {
+    font-size: 1.5rem;
+    font-weight: 500
+}
+
+footer {
+    opacity: .9;
+    height: 150px;
+    background: #fff;
     width: 100%;
-    height: auto;
-    padding-bottom: 4rem;
-  }
-  #listing_info_Container #userAbout h3 {
-    font-size: 1.4rem;
-    margin-bottom: .5rem;
-  }
-  #userAbout p {
-      line-height: 30px;
-      font-size: 1.1rem;
-  }
-  #OuterFormContainer {
-      height: 702px;
-      width: 95%;
-      flex-direction: column;
-  }
-  #loginForm {
-      width: 90%;
-      flex-direction: column;
-  }
-  #formContainer {
-      width: 100%;
-      border-bottom: .75px solid #565656;
-      border-right: unset;
-  }
-  #formContainer form {
-      width: 100%;
-  }
-  #registerContainer {
-      border-top: .75px solid #565656;
-      border-left: unset;
-      width: 100%;
-  }
-  #registerContainer a {
-      padding: 20px 35px;
-  }
-  #loginSignUpContainer {
-    margin-bottom: 6rem;
-  }
-  .positive, .negative {
-      width: 95%;
-      height: 65%;
-  }
-  #footerNav{
-    display: none;
-  }
-  .signIn_register{
-    display: none;
-  }
-  #newListingMainContainer {
-      height: auto;
-      width: 100%;
-      margin-bottom:4rem;
-  }
-  #newListingForm {
-      flex-direction: column;
-      width: 93%;
-  }
-  #leftSideListingInfo, #rightSideListingInfo {
-      width: 98%;
-  }
-  #listingAddress input, #listingInfo input, #listingphotos input {
-    width: 50%;
-    margin: 5px;
-  }
-  #listingInfoContainer input{
-    width: 44%;
-    margin: 5px;
-  }
-  #listingInfo {
-      padding: 2rem 0;
-  }
-  #listingphotos textarea {
-      border: .5px solid rgba(0, 0, 0, .5);
-  }
-  #listingphotos{
-    padding: unset;
-  }
-  #listingAddress{
-    padding-top: 3rem;
-  }
-  #listingphotos input[type='file'] {
-      margin: 30px 0;
-  }
-  #rightSideListingInfo input[type="submit"]{
-    padding: 15px 30px;
-    margin-bottom: 2rem;
-  }
-  .statColumn{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#footerNav {
+    height: 100%;
     flex-basis: 35%;
-  }
-  #listingShowStats h3{
+    display: flex;
+    align-items: center;
+    padding-left: 10px
+}
+
+#footerNavUl {
+    display: flex;
+    height: 100%;
+    height: 90%;
+    justify-content: space-around;
+    flex-direction: column
+}
+
+#footerNavUlColOne {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 50%;
+    align-items: flex-start;
+    width: 35%;
+    padding-left: 20px
+}
+
+#footerNavUlColTwo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 50%;
+    align-items: flex-start;
+    width: 35%;
+    padding-left: 20px
+}
+
+#footerLogo {
+    height: 100%;
+    flex-basis: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+#footerSignIn_register {
+    flex-basis: 35%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+    align-items: center
+}
+
+#footerSignIn {
+    display: flex;
+    height: 50%;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding-right: 20px
+}
+
+#footerSignIn li:first-of-type {
+    margin-bottom: -30px
+}
+
+#landingContainer {
+    height: auto;
+    width: 100%
+}
+#listingHeader{
+  padding-bottom: 5rem;
+}
+#listingsContainer {
+    height: auto;
+    width: 100%;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%2387ceeb' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%2300bfff' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%2386ceee' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%233fa9db' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%2386cef1' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%235093b8' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%2386cef4' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23587e96' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%2386cef7' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%23596a75' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%2387cefa' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23565656' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5rem;
+}
+
+#leftContainer {
+    width: 0%;
+    height: 100%;
+    position: relative;
+    background: rgba(255, 255, 255, .75);
+    z-index: 102;
+    display: flex;
     text-align: center;
-  }
+    align-items: stretch;
+    justify-content: space-evenly;
+    flex-direction: column;
+    box-shadow: 5px 0 5px -2px rgba(0, 0, 0, .5)
 }
-@media only screen and (max-width: 600px) and (min-height: 800px){
-  #userImage img {
-    height: 75%;
+
+#rightContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 101;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap
+}
+
+#filterContainer {
+    height: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    text-align: left
+}
+
+button {
+    background: 0 0;
+    border: .5px solid #565656;
+    border-radius: 20px;
+    padding: 3px 10px
+  }
+
+.listingCard {
+    width: 50%;
+    height: 325px;
+    padding: 0;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    transition: all .25s ease-in;
+    border-right: .25px solid rgba(0, 0, 0, .5);
+  }
+  .listingCard:nth-of-type(even){
+    justify-content: flex-start;
+    border-right: unset;
+    border-left: .25px solid rgba(0, 0, 0, .5);
+  }
+.cardImage {
+    height: 100%;
     width: 85%;
-  }
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
 }
-@media only screen and (max-width: 325px){
-    #listingsContainer {
-    margin-bottom: 4rem;
-  }
-    #userImage {
-        height: 250px;
+.cardImage img {
+    height: 100%;
+    width: 100%
+}
+
+.cardImage:hover .ListingBrief,
+.cardImage:hover .listingAddress {
+    transform: translate(0, 0);
+    opacity: 1
+}
+
+.listingAddress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 5px;
+    opacity: 0;
+    transform: translate(0, -200%);
+    background: rgba(255, 255, 255, .85);
+    transition: transform .35s ease-in-out, opacity .35s ease-in-out;
+    z-index: 1
+}
+
+.ListingBrief {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 20px;
+    padding-bottom: 0;
+    opacity: 0;
+    transform: translate(0, 200%);
+    background: rgba(255, 255, 255, .85);
+    transition: transform .37s ease-in-out, opacity .35s ease-in-out;
+    z-index: 1
+}
+
+.ListingBrief a {
+    padding: 15px;
+    padding-right: unset
+}
+
+.readMoreContainer {
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: flex-end
+}
+
+.listingStatsBottom,
+.listingStatsTop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 5px;
+    padding-bottom: 15px
+}
+
+.statColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+
+.statColumn img {
+    height: 20px;
+    width: 20px
+}
+
+.statColumn svg {
+    height: 20px;
+    width: 20px
+}
+
+#loginSignUpContainer {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-flow: wrap
+}
+
+#OuterFormContainer {
+    height: 350px;
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-flow: wrap
+}
+
+#loginForm {
+    width: 90%;
+    height: 100%;
+    background: rgba(255, 255, 255, .95);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative!important
+}
+
+.loginSignupForm {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column
+}
+
+#formContainer {
+    position: relative;
+    z-index: 5;
+    width: 50%;
+    border-right: .75px solid #565656;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+#formContainer form {
+    width: 100%;
+    height: 50%
+}
+
+.loginSignupForm input,
+textarea {
+    width: 50%;
+    font-size: .9rem;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, .45);
+    color: #000;
+    outline: 0
+}
+
+#signUpFormContainer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background: rgba(0, 191, 255, .5);
+    clip-path: circle(10% at 100% 0);
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 25px;
+    transition: all .5s ease-in-out
+}
+
+#signUpForm {
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    width: 100%
+}
+
+.fa-times {
+    transform: scale(0);
+    font-size: 2rem;
+    padding: 10px;
+    margin: -10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: .35s ease-in-out
+}
+
+.fa-times:hover {
+    cursor: pointer;
+    color: rgba(0, 191, 255, 1)
+}
+
+#signUpForm input[type=text] {
+    text-align: center
+}
+
+#signUpForm input[type=email],
+#signUpForm input[type=password],
+#signUpForm input[type=text],
+#signUpForm textarea {
+    font-size: .9rem;
+    width: 85%;
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: 0;
+    background-color: transparent;
+    color: #000;
+    margin-top: 1rem
+}
+
+#signUpForm input[type=email]:focus,
+#signUpForm input[type=password]:focus,
+#signUpForm input[type=text]:focus,
+#signUpForm textarea:focus {
+    border-bottom: 1px solid rgba(0, 191, 255, 1)
+}
+
+#signUpForm textarea {
+    height: 150px;
+    width: 85%
+}
+
+#signUpForm input[type=submit] {
+    font-size: .9rem;
+    margin-top: 1rem
+}
+
+#signUpForm input[type=submit]:hover {
+    border: 1px solid rgba(0, 191, 255, 1);
+    color: rgba(0, 191, 255, 1);
+    cursor: pointer;
+    border-radius: 5px
+}
+
+input[type=submit] {
+    border: 1px solid rgba(0, 0, 0, .35);
+    color: #000;
+    border-radius: 25px;
+    background-color: transparent;
+    width: unset;
+    padding: 5px 20px;
+    transition: all .35s ease-in-out
+}
+
+#registerContainer a:hover,
+input[type=submit]:hover {
+    border: 1px solid rgba(0, 191, 255, .45);
+    color: rgba(0, 191, 255, 1);
+    cursor: pointer;
+    border-radius: 5px
+}
+
+#orDiv {
+    height: 50px;
+    width: 50px;
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(0, 191, 255, .5);
+    transition: opacity .25s ease-in-out
+}
+
+p {
+    font-family: Lato, sans-serif;
+    color: rgba(0, 0, 0, .85);
+    font-size: .95rem
+}
+
+#registerContainer {
+    border-left: .75px solid #565656;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative
+}
+
+#registerContainer a {
+    border: 1px solid rgba(0, 0, 0, .35);
+    color: #000;
+    border-radius: 25px;
+    background-color: transparent;
+    padding: 8px 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+#mainFormColumnContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row
+}
+
+#signUpLeftContainer,
+#signUpRightContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+#signUpLeftContainer input,
+#signUpRightContainer input {
+    text-align: center
+}
+
+#signUpRightContainer {
+    align-items: flex-end
+}
+
+#signUpLeftContainer {
+    align-items: flex-start
+}
+
+textarea {
+    resize: none;
+    height: 300px
+}
+
+#innerSignUpContainer {
+    width: 100%;
+    height: 75%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column
+}
+
+#registerForm {
+    width: 75%;
+    height: 100%;
+    background: rgba(255, 255, 255, .85);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative
+}
+
+.negative,
+.positive {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: .25px solid #000;
+    width: 50%;
+    height: 60%;
+    border-radius: 25px;
+    z-index: 1000;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%2387ceeb' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%2300bfff' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%2386ceee' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%233fa9db' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%2386cef1' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%235093b8' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%2386cef4' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23587e96' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%2386cef7' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%23596a75' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%2387cefa' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23565656' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
+    background-size: cover
+}
+
+.negative .header p,
+.positive .header p {
+    color: #000;
+    text-align: center
+}
+
+#userControlsContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row
+}
+
+#userControlsContainer h1 {
+    font-size: 1.65rem;
+    margin-bottom: 35px
+}
+
+#userContainer {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly
+}
+
+#userUpload {
+    align-self: flex-start;
+    flex-basis: 25%;
+    width: 100%
+}
+
+#userImage {
+    height: calc(100% - 25px);
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+#userImage img {
+    height: 40%;
+    width: 55%
+}
+
+label {
+    font-family: Lato, sans-serif;
+    font-size: 1.05rem
+}
+
+input[type=file] {
+    padding-top: 2px;
+    margin-bottom: -10px;
+    font-size: .95rem;
+    font-family: Lato, sans-serif
+}
+
+#uploadContainer {
+    padding-left: 35px
+}
+
+#imageContainer {
+    width: 50%;
+    height: 100%
+}
+
+#newListingMainContainer {
+    height: 105vh;
+    margin: 0 auto;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+
+#newListingMainContainer h1 {
+    padding-top: unset
+}
+
+#newListingForm {
+    margin: 0 auto;
+    height: 65%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    background: rgba(255, 255, 255, .75);
+    border-radius: 25px
+}
+
+#leftSideListingInfo,
+#rightSideListingInfo {
+    width: 45%
+}
+
+#listingAddress,
+#listingInfo,
+#listingphotos {
+    padding: 1rem 0
+}
+
+#listingphotos input[type=file] {
+    width: 100%;
+    background: #fff
+}
+
+#listingphotos textarea {
+    resize: none;
+    height: 175px;
+    width: 100%;
+    outline: 0;
+    border: none
+}
+
+#listingphotos input[type=file]:focus,
+#listingphotos textarea:focus {
+    outline: #00bfff;
+    border: 1px solid #00bfff
+}
+
+#listingAddress input,
+#listingInfo input,
+#listingphotos input {
+    margin: 10px;
+    font-size: .95rem;
+    color: #000
+}
+
+#listingAddress input:focus,
+#listingInfo input:focus,
+#listingphotos input:focus {
+    outline: #00bfff;
+    border: 1px solid #00bfff
+}
+
+#listing_info_Container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    word-wrap: break-word
+}
+
+#listing_info_Container #userListingContainer {
+    height: 60%;
+    width: 100%;
+    overflow-y: scroll
+}
+
+#listing_info_Container #AgentListings,
+#listing_info_Container #userAbout {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column
+}
+
+#listing_info_Container #AgentListings {
+    height: 20%;
+    overflow-y: scroll
+}
+
+#listing_info_Container #AgentListings form {
+    flex-direction: row;
+    align-self: flex-start;
+    display: inline
+}
+
+#listing_info_Container #AgentListings form a {
+    font-size: .9rem;
+    margin: unset
+}
+
+#listing_info_Container #AgentListings form button {
+    background: 0 0;
+    border: .5px solid #8b0000;
+    color: #8b0000;
+    font-size: .95rem;
+    margin-top: 5px;
+    transition: all .35s ease-in-out
+}
+
+#listing_info_Container #AgentListings form button:hover {
+    background: #8b0000;
+    border: .5px solid transparent;
+    color: #fff;
+    cursor: pointer
+}
+
+#listing_info_Container #userAbout h3 {
+    font-size: 1.3rem;
+    margin-bottom: 2rem
+}
+
+#userAbout p {
+    width: 85%;
+    text-align: justify;
+    padding: 15px;
+    line-height: 25px;
+    font-size: 1.05rem
+}
+
+h3 {
+    font-family: Lato, sans-serif;
+    font-size: .95rem
+}
+
+#listingphotos {
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    flex-direction: column;
+    margin: 0 auto;
+    height: auto
+}
+
+#listingphotos input {
+    height: 100%
+}
+
+#listingAddress,
+#listingInfoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.addressH3 {
+    font-size: 1.2rem;
+    padding-top: 5px;
+    padding-left: 5px;
+    font-weight: 600
+}
+
+.addressCity,
+.addressP {
+    font-size: 1.1rem;
+    color: #000;
+    padding-left: 5px
+}
+
+#listingAddress div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+#listingInfoContainer {
+    width: 100%;
+    margin: 0 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center
+}
+
+#listingInfo {
+    display: flex;
+    align-items: center;
+    flex-direction: column
+}
+
+#flatIconCred {
+    position: absolute;
+    bottom: .25rem;
+    font-size: .75rem
+}
+
+#flatIconCred a {
+    font-size: .75rem;
+    padding: 0 10px
+}
+
+.contactModal {
+    display: none;
+    height: 450px;
+    width: 50%
+}
+
+#contactForm {
+    height: 85%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly
+}
+
+#contactForm h4 {
+    font-size: 1.5rem;
+    font-family: Lato, sans-serif
+}
+
+#contactForm input {
+    width: 50%;
+    outline: 0;
+    border: none;
+    border-bottom: .35px solid #565656;
+    margin: 8px;
+    font-family: Lato, sans-serif;
+    font-size: .9rem;
+    opacity: .85;
+    transition: all .1s ease-in
+}
+
+#contactForm textarea {
+    height: 125px;
+    opacity: .85;
+    background: 0 0;
+    transition: all .1s ease-in
+}
+
+#contactForm input[type=submit] {
+    border: .5px solid #000;
+    width: 25%;
+    transition: all .2s ease-in-out;
+    padding: 10px 0
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+    outline: 0;
+    opacity: 1;
+    background: rgba(255, 255, 255, .85)
+}
+
+#contactFormContainer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%2387ceeb' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%2300bfff' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%2386ceee' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%233fa9db' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%2386cef1' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%235093b8' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%2386cef4' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23587e96' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%2386cef7' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%23596a75' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%2387cefa' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23565656' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
+    background-size: cover;
+    background-position: top;
+    border-radius: 15px
+}
+
+#listingShowContainer {
+    height: auto;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    display: block
+}
+
+#MainShowImgContainer {
+    height: 445px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center
+}
+
+#leftShowImgContainer {
+    width: 70%;
+    height: 100%
+}
+
+.mySlides {
+    height: 100%;
+    width: 100%
+}
+
+.mySlides img {
+    height: 100%;
+    width: 100%
+}
+
+#mainShowInfoContainer {
+    height: auto;
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 5rem
+}
+
+#listingShowAddress {
+    padding-top: 1rem;
+    width: 85%;
+    margin: 0 auto;
+    text-align: center
+}
+
+#listingShowAddress h1 {
+    padding: unset;
+    text-align: unset
+}
+
+#listingShowAddress h1,
+#listingShowAddress h2 {
+    font-size: 1.5rem;
+    display: inline
+}
+
+#listingShowAddress h2 {
+    display: inline
+}
+
+#listingShowStats {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: wrap;
+    height: 115px
+}
+
+#listingShowStats .statColumn svg {
+    height: 30px;
+    width: 30px
+}
+
+#listingShowStats h3,
+#listingShowStats p {
+    font-size: 1.05rem;
+    font-weight: 400
+}
+
+#listingEmailUsBtn {
+    height: 225px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center
+}
+
+#listingEmailUsBtn span {
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly
+}
+
+#listingEmailUsBtn span a {
+    text-align: center;
+    border-radius: 20px;
+    margin: 25px;
+    margin-bottom: 0;
+    background: #32cd32;
+    color: #000;
+    padding: 15px 20px;
+    border: 1px solid transparent;
+    transition: all .35s ease-in-out
+}
+
+#listingEmailUsBtn span a:hover {
+    background: 0 0;
+    border: 1px solid #32cd32
+}
+
+#listingAmenities {
+    height: 115px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-flow: wrap
+}
+
+#listingShowDescription {
+    height: 345px;
+    display: flex;
+    padding: 3.5rem;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    word-wrap: break-word
+}
+
+#listingShowDescription h2 {
+    align-self: flex-start;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem
+}
+
+#listingShowDescription p {
+    line-height: 35px;
+    word-break: break-word
+}
+
+#listedBy a {
+    font-family: Lato, sans-serif;
+    color: rgba(0, 0, 0, .85);
+    font-size: .95rem
+}
+
+.statColumn span {
+    font-size: 1.15rem
+}
+
+#listingAmenities .statColumn img,
+#listingShowStats .statColumn img {
+    height: 25px;
+    width: 25px
+}
+
+#mobileH4 {
+    display: none
+}
+
+.active {
+    display: flex!important;
+    opacity: 1!important;
+    transform: scale(1)!important;
+    z-index: 1000!important
+}
+
+.bodyOverflow {
+    overflow: hidden!important;
+    position: relative!important
+}
+
+#agentPhotoUpload {
+    display: flex;
+    flex-direction: column
+}
+
+#agentPhotoUpload input[type=submit] {
+    align-self: flex-end;
+    padding: 5px 5px
+}
+
+#editAboutBtn {
+    align-self: flex-start
+}
+
+#editUserForm {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column
+}
+
+#editUserForm h1 {
+    margin-bottom: 2rem
+}
+
+#editUserForm form {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+
+#editUserForm form textarea {
+    display: block;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, .15)
+}
+
+#editUserForm form input[type=submit] {
+    margin-top: 2rem;
+    padding: 10px 20px
+}
+
+#editListingBtn {
+    background: 0 0;
+    border: .5px solid #ff8c00;
+    color: #ff8c00;
+    font-size: .95rem;
+    margin-top: 5px;
+    transition: all .35s ease-in-out;
+    border-radius: 20px;
+    padding: 3px 15px
+}
+
+#AgentListings h3 {
+    margin-bottom: 2rem;
+    font-size: 1.3rem
+}
+
+#editListingSection {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column
+}
+
+#editListingSection h1 {
+    margin-bottom: 35px
+}
+
+#editListingSection #editListingForm {
+    width: 75%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 auto
+}
+
+#editListingInfoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0
+}
+
+#passwordReset,
+#resetContainer {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+#passwordReset form h1,
+#resetContainer form h1 {
+    padding-top: unset
+}
+
+#passwordReset form,
+#resetContainer form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+#resetContainer form {
+    height: 50%;
+    justify-content: space-evenly
+}
+
+#passwordReset form input {
+    font-size: 1rem;
+    margin-bottom: 1rem
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column
+}
+
+@media only screen and (min-width:1400px) {
+    a,
+    li {
+        font-size: 1.3rem
+    }
+    h1 {
+        font-size: 2.05rem
+    }
+    #footerLogo h1,
+    .logoContainer h1 {
+        font-size: 2.5rem
+    }
+    .cycle-overlay {
+        font-size: 1.25rem
+    }
+    #aboutDescription p {
+        font-size: 1.2rem
+    }
+    #aboutImgContainer img {
+        width: 100%;
+        margin-left: 1rem;
+        height: 44%;
+    }
+    #aboutDescription p {
+        font-size: 1.3rem
+    }
+    .serviceBox p {
+        line-height: 30px;
+        font-size: 1.25rem
+    }
+    .serviceBox svg {
+        height: 5.5rem;
+        width: 6rem
+    }
+    #userImage img {
+        height: 55%;
+        width: 65%
+    }
+    #userAbout p {
+        line-height: 35px;
+        font-size: 1.4rem
+    }
+    #listing_info_Container #userAbout h3 {
+        font-size: 2rem;
+        margin-bottom: 1rem
+    }
+    #userControlsContainer h1 {
+        font-size: 2rem;
+        margin-bottom: -2rem
+    }
+    #listing_info_Container #AgentListings form a {
+        font-size: 1.2rem
+    }
+    #AgentListings h3 {
+        font-size: 2rem;
+        padding-bottom: 10px
+    }
+    input[type=file] {
+        font-size: 1.35rem
+    }
+    label {
+        font-size: 1.65rem
+    }
+    #agentPhotoUpload input[type=submit] {
+        padding: 10px 15px;
+        font-size: 1.35rem
+    }
+    .ui.dropdown {
+        font-size: 1.3rem
+    }
+}
+
+@media only screen and (width:1024px) and (height:1366px) {
+    .ui.dropdown {
+        font-size: 1.3rem
+    }
+    a,
+    li {
+        font-size: 1.3rem
+    }
+    .cycle-overlay {
+        width: 95%;
+        margin: 0 auto;
+        left: 50%;
+        transform: translate(-50%, -50%)
+    }
+    .cycle-slideshow div {
+        font-size: 1.25rem
+    }
+    h1 {
+        font-size: 2.5rem
+    }
+    a,
+    li {
+        font-size: 1.25rem
+    }
+    #footerLogo h1,
+    .logoContainer h1 {
+        font-size: 3rem
+    }
+    #aboutImgContainer {
+        margin-left: unset;
+        margin-right: unset;
+        height: 60%;
+        width: 50%
+    }
+    #aboutDescription p {
+        font-size: 1.35rem
+    }
+    .serviceBox {
+        height: auto;
+        flex-direction: row;
+        background: rgba(255, 255, 255, .75);
+        border-radius: 25px
+    }
+    .serviceBox p {
+        text-align: center;
+        line-height: 30px;
+        font-size: 1.2rem
+    }
+    .serviceBox:first-of-type {
+        align-self: flex-start;
+        margin-top: 4rem;
+        flex-direction: row;
+        position: relative;
+        left: 15px;
+        top: 65px
+    }
+    .serviceBox:nth-of-type(2) {
+        align-self: flex-end;
+        justify-content: flex-end;
+        flex-direction: row;
+        margin-bottom: -6rem;
+        position: relative;
+        left: -45px;
+        top: 6rem;
+        padding: 11px
+    }
+    .serviceBox:last-of-type {
+        position: relative;
+        top: 6rem;
+        right: 20px;
+        flex-direction: row
     }
     #userContainer {
-      height: auto;
+        height: 85vh
+    }
+    #userControlsContainer h1 {
+        font-size: 2.15rem
+    }
+    #userImage img {
+        height: 45%;
+        width: 80%
+    }
+    #listing_info_Container #userAbout h3 {
+        font-size: 1.65rem
+    }
+    #userAbout p {
+        line-height: 35px;
+        font-size: 1.35rem
+    }
+    .contactModal {
+        width: 75%;
+        height: 50%
+    }
+    #contactForm input,
+    #contactForm textarea {
+        width: 60%
+    }
+    .negative,
+    .positive {
+        width: 75%;
+        height: 32%
+    }
+}
+@media only screen and (min-width: 1280px) and (min-height: 850px){
+  #aboutImgContainer img {
+      height: 45%;
   }
-  #listingAmenities {
-      height: 145px;
+}
+@media only screen and (max-width:768px) and (min-height:1024px) {
+    li {
+        font-size: 1rem
+    }
+    #listingShowDescription {
+        height: auto
+    }
+    #userImage img {
+        height: 45%;
+        width: 80%
+    }
+    #userAbout p {
+        font-size: 1.25rem
+    }
+    .cycle-overlay {
+        padding: 5px;
+        width: 98%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 25px
+    }
+    #aboutImgContainer {
+        margin-left: unset;
+        margin-right: unset;
+        width: 69%;
+        height: 44%;
+        opacity: .9
+    }
+    #aboutDescription p {
+        font-size: 1rem;
+        width: 87%;
+        margin-left: -1rem
+    }
+    .serviceBox {
+        height: auto;
+        flex-direction: row;
+        background: rgba(255, 255, 255, .75);
+        border-radius: 25px
+    }
+    .serviceBox p {
+        text-align: center
+    }
+    .serviceBox:first-of-type {
+        align-self: flex-start;
+        margin-top: 4rem;
+        flex-direction: row;
+        position: relative;
+        left: 15px;
+        top: 33px
+    }
+    .serviceBox:nth-of-type(2) {
+        align-self: flex-end;
+        justify-content: flex-end;
+        flex-direction: row;
+        margin-bottom: -6rem;
+        position: relative;
+        left: -45px;
+        padding: 11px
+    }
+    .serviceBox:last-of-type {
+        margin-top: 6rem;
+        position: relative;
+        right: 20px;
+        flex-direction: row
+    }
+    #leftSideListingInfo,
+    #rightSideListingInfo {
+        width: 100%
+    }
+    .listingphotos input[type=submit] {
+        padding: 10px 30px
+    }
+    .contactModal {
+        width: 75%
+    }
+    #contactForm input,
+    #contactForm textarea {
+        width: 60%
+    }
+    .negative,
+    .positive {
+        width: 75%;
+        height: 32%
+    }
+}
+
+@media only screen and (max-width:600px) {
+    nav {
+        justify-content: space-between;
+        padding: 0 20px
+    }
+    .navBar {
+        display: none
+    }
+    .hamburger {
+        display: block
+    }
+    .contactModal {
+        width: 100%
+    }
+    #contactForm input,
+    #contactForm textarea {
+        width: 75%
+    }
+    #contactForm input[type=submit] {
+        width: 35%;
+        padding: 15px 0
+    }
+    .cycle-overlay {
+        padding: 5px;
+        width: 95%;
+        left: 50%;
+        transform: translate(-50%, -50%)
+    }
+    h1 {
+        padding: 3rem 0
+    }
+    .statColumn img{
+      height: 25px!important;
+      width: 25px!important;
   }
-  #listingShowDescription {
-    margin-top: 2rem;
+  .ListingBrief a {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-bottom: 0;
+    padding-right: 0;
   }
-  #contactForm h4 {
-      font-size: 1.35rem;
+    #aboutImgContainer img {
+        height: 90%
+    }
+    #aboutSection {
+        height: auto
+    }
+    #aboutSection hr {
+        margin-bottom: 3rem
+    }
+    #aboutImgContainer {
+        margin-left: unset;
+        margin-right: unset;
+        width: 90%;
+        margin-bottom: 1.5rem
+    }
+    #aboutSectionInnerContainer {
+        flex-direction: column
+    }
+    #aboutDescription {
+        width: 80%
+    }
+    #aboutDescription p {
+        line-height: 145%;
+        font-size: 1.13rem
+    }
+    #serviceSection {
+        height: auto
+    }
+    #serviceContainer {
+        margin-top: 2.5rem;
+        height: auto;
+        flex-direction: column
+    }
+    .serviceBox {
+        width: 90%;
+        height: auto;
+        display: flex;
+        flex-direction: column
+    }
+    .serviceBox svg {
+        height: 5.5rem
+    }
+    .serviceBox p {
+        margin-top: unset;
+        margin-bottom: 3rem
+    }
+    .listingCard {
+        width: 100%;
+        padding: 0;
+    }
+    .cardImage {
+      width: 100%;
+     border-radius: unset;
   }
-  .contactModal {
-    height: 350px;
+  .cardImage img {
+    height: 100%;
+    width: 100%;
   }
+    .listingAddress {
+        padding: 15px
+    }
+    .addressH3 {
+        font-size: 1.3rem
+    }
+    .addressCity,
+    .addressP {
+        font-size: 1.15rem;
+        padding-top: 1px
+    }
+    .statColumn svg {
+        height: 25px;
+        width: 25px
+    }
+    .statColumn h3 {
+        font-size: 1.1rem
+    }
+    .ListingBrief {
+        padding: 10px
+    }
+    .ListingBrief a {
+        font-size: 1.05rem
+    }
+    #listingsContainer {
+    height: auto;
+  }
+  #rightContainer {
+    align-items: flex-start;
+    padding: 20px 0;
+  }
+    .statColumn p {
+        font-size: 1rem
+    }
+    .listingStatsTop {
+      padding: 15px;
+    }
+    #MainShowImgContainer {
+    height: 250px;
+  }
+    .mySlides {
+    height: 100%;
+    width: 100%;
+  }
+    .mySlides img {
+    height: 100%;
+  }
+    #listingShowContainer {
+        width: 95%
+    }
+    #leftShowImgContainer {
+        width: 100%
+    }
+    #listingShowAddress h1,
+    #listingShowAddress h2 {
+        font-size: 1.55rem
+    }
+    #listingShowStats {
+        margin: 35px 0
+    }
+    #listingAmenities .statColumn img,
+    #listingShowStats .statColumn img {
+        height: 40px;
+        width: 40px
+    }
+    #listingShowStats {
+        height: auto;
+        justify-content: space-between
+    }
+    #listingEmailUsBtn span {
+        font-size: 1.3rem
+    }
+    #editListingSection {
+        height: auto
+    }
+    #listingEmailUsBtn span a {
+        font-size: 1.1rem;
+        padding: 20px 25px
+    }
+    #listedBy a {
+        font-size: 1rem
+    }
+    #listingShowDescription {
+        height: auto;
+        padding: unset;
+        padding-bottom: 3rem
+    }
+    #footerSignIn_register {
+        display: none
+    }
+    #userContainer {
+        flex-direction: column;
+        height: auto
+    }
+    #listing_info_Container #AgentListings form {
+        margin: 0 auto
+    }
+    #userControlsContainer h1 {
+        font-size: 1.75rem;
+        margin-bottom: 20px
+    }
+    #imageContainer {
+        width: 95%
+    }
+    #userImage img {
+        height: 85%;
+        width: 85%
+    }
+    #listing_info_Container {
+        width: 100%;
+        height: auto;
+        padding-bottom: 4rem
+    }
+    #listing_info_Container #userAbout h3 {
+        font-size: 1.4rem;
+        margin-bottom: .5rem;
+        margin-top: 25px
+    }
+    #userUpload {
+        margin-bottom: 5px
+    }
+    #userAbout p {
+        line-height: 30px;
+        font-size: 1.1rem;
+        padding-top: unset
+    }
+    #OuterFormContainer {
+        height: 702px;
+        width: 95%;
+        flex-direction: column
+    }
+    #loginForm {
+        width: 90%;
+        flex-direction: column
+    }
+    #formContainer {
+        width: 100%;
+        border-bottom: .75px solid #565656;
+        border-right: unset
+    }
+    #formContainer form {
+        width: 100%
+    }
+    #registerContainer {
+        border-top: .75px solid #565656;
+        border-left: unset;
+        width: 100%
+    }
+    #registerContainer a {
+        padding: 20px 35px
+    }
+    #loginSignUpContainer {
+        margin-bottom: 6rem
+    }
+    .negative,
+    .positive {
+        width: 95%;
+        height: 65%
+    }
+    #footerNav {
+        display: none
+    }
+    .signIn_register {
+        display: none
+    }
+    #newListingMainContainer {
+        height: auto;
+        width: 100%;
+        margin-bottom: 4rem
+    }
+    #newListingForm {
+        flex-direction: column;
+        width: 93%
+    }
+    #leftSideListingInfo,
+    #rightSideListingInfo {
+        width: 98%
+    }
+    #listingAddress input,
+    #listingInfo input,
+    #listingphotos input {
+        width: 50%;
+        margin: 5px
+    }
+    #listingInfoContainer input {
+        width: 44%;
+        margin: 5px
+    }
+    #listingInfo {
+        padding: 2rem 0
+    }
+    #listingphotos textarea {
+        border: .5px solid rgba(0, 0, 0, .5)
+    }
+    #listingphotos {
+        padding: unset
+    }
+    #listingAddress {
+        padding-top: 3rem
+    }
+    #listingphotos input[type=file] {
+        margin: 30px 0
+    }
+    #rightSideListingInfo input[type=submit] {
+        padding: 15px 30px;
+        margin-bottom: 2rem
+    }
+    .statColumn {
+        flex-basis: 35%
+    }
+    #listingShowStats h3 {
+        text-align: center
+    }
+    #agentPhotoUpload {
+        margin-bottom: 20px
+    }
+    #agentPhotoUpload input[type=submit] {
+        padding: 10px 5px;
+        font-size: 15px
+    }
+    #editAboutBtn {
+        align-self: center
+    }
+    #listing_info_Container #AgentListings {
+        margin-top: 35px
+    }
+    #listing_info_Container #AgentListings form button {
+        padding: 3px 15px
+    }
+    #listing_info_Container #AgentListings form a {
+        padding: 3px 20px;
+        margin-right: 5px
+    }
+    #editUserForm form {
+        width: 75%
+    }
+    #editUserForm form input[type=submit] {
+        font-size: 1.5rem
+    }
+    #editUserForm form textarea {
+        font-size: 1.3rem
+    }
+    #editListingSection h1 {
+        margin-bottom: unset;
+        padding-top: 5rem;
+        font-size: 1.2rem
+    }
+    #listingInfoContainer div {
+        width: 100%;
+        display: flex;
+        align-items: center
+    }
+}
+
+@media only screen and (max-width:600px) and (min-height:800px) {
+    #userImage img {
+        height: 75%;
+        width: 85%
+    }
+}
+
+@media only screen and (max-width:325px) {
+    #listingsContainer {
+        margin-bottom: 4rem
+    }
+    #userImage {
+        height: 250px
+    }
+    #userContainer {
+        height: auto
+    }
+    #listingAmenities {
+        height: 145px
+    }
+    #listingShowDescription {
+        margin-top: 2rem
+    }
+    #contactForm h4 {
+        font-size: 1.35rem
+    }
+    .contactModal {
+        height: 350px
+    }
+    #editUserForm {
+        height: auto
+    }
+    #listing_info_Container #AgentListings form .addressP {
+        padding-right: unset
+    }
+    #listing_info_Container #AgentListings form a {
+        margin-right: unset
+    }
+    #editUserForm form {
+        width: 75%
+    }
+    #editUserForm form input[type=submit] {
+        font-size: 1.5rem;
+        margin-bottom: 3rem
+    }
+    #editUserForm form textarea {
+        font-size: 1.3rem
+    }
 }

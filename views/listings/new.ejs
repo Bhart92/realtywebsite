@@ -1,6 +1,6 @@
 <% include ../partials/header %>
 <div id="newListingMainContainer">
-  <h1>Add a new Listing</h1>
+  <h1>Add a new listing</h1>
   <form id="newListingForm" action="/listings" method="post" enctype="multipart/form-data">
     <div id="leftSideListingInfo">
       <div id="listingAddress">
@@ -23,7 +23,7 @@
           <input type="text" name="listing[bedrooms]" placeholder="Bedroom Count" required>
           <input type="text" name="listing[bathrooms]" placeholder="Bathroom Count" required>
           <input type="text" name="listing[amenities]" placeholder="Amenities" required>
-          <input type="number" name="listing[price]" placeholder="Price" required>
+          <input type="text" name="listing[price]" placeholder="Price" required>
         </div>
       </div>
     </div>

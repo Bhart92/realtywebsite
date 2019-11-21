@@ -1,4 +1,4 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 var listingSchema = new mongoose.Schema({
   address: String,

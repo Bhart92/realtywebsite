@@ -5,8 +5,8 @@ const express = require('express'),
       passport = require('passport'),
       methodOverride = require('method-override'),
       localStrategy = require('passport-local'),
-      port = 3000 || process.env.PORT,
       flash = require('connect-flash');
+let port = process.env.PORT || 3000;
 let User = require('./models/user');
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/user');
@@ -14,11 +14,13 @@ const listingsRoutes = require('./routes/listings');
 const contactRoutes = require('./routes/contact');
 
 
-mongoose.connect('mongodb://localhost:27017/realty', {useNewUrlParser: true});
-// mongoose.connect("mongodb+srv://bhart:bella21@cluster0-9mb0e.mongodb.net/yelpCamp?retryWrites=true", {
-//   useNewUrlParser: true,
-//   useCreateIndex: true,
-// });
+// mongoose.connect('mongodb://localhost:27017/realty', {useNewUrlParser: true});
+mongoose.connect("mongodb+srv://bhart:Bella2121@cluster0-ltofv.mongodb.net/test?retryWrites=true&w=majority", {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true
+});
+
 
 // config
 app.use(express.static(__dirname + '/public'));
@@ -66,7 +68,10 @@ app.get('/', function(req, res){
     res.render('landing.ejs', {user: user});
   });
 });
+app.get("*", function(req, res){
+  res.redirect("/");
+});
 
-app.listen(3000, function(){
+app.listen(port, function(){
   console.log('live');
 });

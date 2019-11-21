@@ -1,8 +1,9 @@
-var express = require("express"),
+const express = require("express"),
     router = express.Router(),
     passport = require("passport"),
     nodemailer = require("nodemailer");
-require("dotenv").config();
+    require("dotenv").config();
+
 
 router.post('/', function (req, res) {
   let mailOpts, smtpTrans;
@@ -18,7 +19,7 @@ router.post('/', function (req, res) {
   mailOpts = {
     from: req.body.name + ' &lt;' + req.body.email + '&gt;',
     to: 'hartwebdev92@gmail.com',
-    subject: 'New message from Enki Realty!',
+    subject: 'New message from Blue Peaks Realty!',
     text:`${req.body.message}`
   };
   smtpTrans.sendMail(mailOpts, function (error, response) {

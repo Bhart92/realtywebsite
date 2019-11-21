@@ -1,0 +1,12 @@
+<% include ../partials/header %>
+
+<section id="editUserForm">
+  <h1>Edit About Section</h1>
+  <form class="" action="/user/<%= user._id %>?_method=PUT" method="post">
+    <textarea name="description" placeholder="<%= user.description %>"></textarea>
+    <input type="submit" value="Submit">
+  </form>
+
+</section>
+
+<% include ../partials/footer %>

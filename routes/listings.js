@@ -7,22 +7,22 @@ const nodemailer = require("nodemailer");
 const middleware = require('../middleware/index');
 const crypto = require("crypto");
 let Listing = require('../models/listing');
+const multer = require('multer');
 require("dotenv").config();
-var multer = require('multer');
-var storage = multer.diskStorage({
+const storage = multer.diskStorage({
   filename: function(req, file, callback) {
     callback(null, Date.now() + file.originalname);
   }
 });
-var imageFilter = function (req, file, cb) {
+let imageFilter = function (req, file, cb) {
     // accept image files only
     if (!file.originalname.match(/\.(jpg|jpeg|png|gif|jfif)$/i)) {
         return cb(new Error(''), false);
     }
     cb(null, true);
 };
-var upload = multer({ storage: storage, fileFilter: imageFilter})
-var cloudinary = require('cloudinary');
+let upload = multer({ storage: storage, fileFilter: imageFilter})
+const cloudinary = require('cloudinary');
 cloudinary.config({
   cloud_name: 'brandeno92',
   api_key: process.env.CLOUDINARY_KEY,
@@ -80,6 +80,48 @@ router.get('/:id', function(req, res){
     res.render('listings/show', {listing: listing});
   })
 });
+// router.get('/:id/edit', middleware.isLoggedIn, middleware.checkListingOwnership, function(req, res){
+//   Listing.findById(req.params.id, function(err, listing){
+//     if(err){
+//       console.log(err);
+//       req.flash('error', 'Oops something went wrong! Try again please');
+//     } else{
+//       res.render('listings/edit', {listing: listing});
+//     }
+//   })
+// })
+// router.put('/:id', upload.single('image'), function(req, res){
+//   Listing.findById(req.params.id, async function(err, listing){
+//     if(err){
+//       console.log(err);
+//     } else{
+//       if(req.file){
+//         try{
+//           await cloudinary.v2.uploader.destroy(listing.imageId);
+//           var result = await cloudinary.v2.uploader.upload(req.file.path);
+//           listing.imageId = result.public_id;
+//           listing.image = result.secure_url;
+//         } catch(err){
+//           console.log(err);
+//           }
+//         }
+//         listing.address = req.body.address;
+//         listing.city = req.body.city;
+//         listing.zipCode = req.body.zipCode;
+//         listing.sqft = req.body.sqft;
+//         listing.lotSize = req.body.lotSize;
+//         listing.yearBuilt = req.body.yearBuilt;
+//         listing.bathrooms = req.body.bathrooms;
+//         listing.price = req.body.price;
+//         listing.yearBuilt = req.body.yearBuilt;
+//         listing.amenities = req.body.amenities;
+//         listing.description = req.body.description;
+//         listing.save();
+//         req.flash("success", "Successfully Updated!");
+//         res.redirect("/");
+//       }
+//     });
+// });
 router.delete("/:id", middleware.isLoggedIn, middleware.checkListingOwnership, function(req, res){
   Listing.findById(req.params.id, async function(err, listing){
     if(err){
@@ -90,7 +132,7 @@ router.delete("/:id", middleware.isLoggedIn, middleware.checkListingOwnership, f
                 //  delete the campground
                 await cloudinary.v2.uploader.destroy(listing.imageId);
                 listing.remove();
-                req.flash("success", "Success!");
+                req.flash("success", "Listing deleted!");
                 res.redirect('/listings');
       } catch(err){
         console.log(err);

@@ -9,7 +9,7 @@
   </div>
   <div id="mainShowInfoContainer">
     <div id="listingShowAddress">
-      <h1><%= listing.address %></h1>
+      <h1><%= listing.address, %></h1>
       <h2><%= listing.city %>, CA</h2> <h2><%= listing.zipCode %></h2>
     </div>
     <div id="listingShowStats">
@@ -38,8 +38,8 @@
     </div>
     <div id="listingEmailUsBtn">
       <hr style="width: 90%;">
-      <span>Want to visit this property? <a href="#">Contact Us!</a></span>
-      <p id="listedBy"><a href="../user/<%= listing.author.id %>">Click here to view listing agent: <%= listing.author.name %></a></p>
+      <span>Want to visit this property? <a class="contactLink" href="javascript: void(0)">Contact Us!</a></span>
+      <p id="listedBy"><a href="../user/<%= listing.author.id %>">Click here to view listing agent:</a><%= listing.author.name %></p>
       <hr style="width: 90%;">
     </div>
     <div id="listingAmenities">
